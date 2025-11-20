@@ -8,9 +8,21 @@
 </head>
 <body>
   <header>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">Welcome</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
     <h1>Welcome to My Portfolio</h1>
   </header>
   <main>
+    <section id="welcome-section">
+      <h1>Welcome</h1>
+      <p>Discover my projects and get to know me!</p>
+    </section>
     <section id="projects">
       {{#each projects}}
       <div class="project-tile">
@@ -31,5 +43,10 @@
       <p>LinkedIn: <a href="{{contact.linkedin}}" target="_blank" aria-label="Visit my LinkedIn profile">Connect with me</a></p>
     </section>
   </main>
+  <script>
+    const projects = {{{json projects}}};
+    const profile = {{{json profile}}};
+    const coursework = {{{json coursework}}};
+  </script>
 </body>
 </html>

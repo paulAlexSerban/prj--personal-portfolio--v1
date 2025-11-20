@@ -3,6 +3,7 @@ const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const Handlebars = require('handlebars');
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -22,7 +23,16 @@ module.exports = {
     new HandlebarsPlugin({
       entry: path.join(__dirname, 'src/templates', '*.hbs'),
       output: path.join(__dirname, 'dist', '[name].html'),
-      data: path.join(__dirname, 'src/data', 'data.json'),
+      data: {
+        projects: require(path.join(__dirname, 'src/data/projects.json')),
+        profile: require(path.join(__dirname, 'src/data/profile.json')),
+        coursework: require(path.join(__dirname, 'src/data/coursework.json')),
+      },
+      helpers: {
+        json: function(context) {
+          return JSON.stringify(context);
+        }
+      }
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -39,3 +49,8 @@ module.exports = {
     ],
   },
 };
+
+// Register custom Handlebars helper for JSON stringification
+Handlebars.registerHelper('json', function(context) {
+  return JSON.stringify(context);
+});

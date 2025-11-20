@@ -1,0 +1,16 @@
+{
+  "name": "John Doe",
+  "title": "Full Stack Developer",
+  "github": "https://github.com/johndoe",
+  "linkedin": "https://linkedin.com/in/johndoe",
+  "aboutMe": {
+    "title": "About Me",
+    "description": "Hello! I am a passionate software engineer with a focus on building efficient and user-friendly web applications. I enjoy learning new technologies and solving challenging problems."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "Feel free to reach out to me via email or connect with me on LinkedIn.",
+    "email": "johndoe@example.com",
+    "linkedin": "https://linkedin.com/in/johndoe"
+  }
+}
