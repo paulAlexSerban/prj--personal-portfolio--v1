@@ -1,0 +1,1 @@
+console.log("Personal Portfolio V1 - Entry Point");
