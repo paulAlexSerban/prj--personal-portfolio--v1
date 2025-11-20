@@ -13,32 +13,32 @@ This document provides a comprehensive, phased task list for building the Person
 ## Phase 1: Project Planning and Setup
 
 ### 1.1 Review and Finalize Requirements
-- [ ] Review all project brief documents (goals, vision, technical requirements).
-- [ ] Confirm alignment with freeCodeCamp user stories and test cases.
-- [ ] Identify any missing architectural details (e.g., specific folder structure, build configuration).
-- [ ] Document assumptions and constraints (e.g., no frameworks, static hosting).
+- [x] Review all project brief documents (goals, vision, technical requirements).
+- [x] Confirm alignment with freeCodeCamp user stories and test cases.
+- [x] Identify any missing architectural details (e.g., specific folder structure, build configuration).
+- [x] Document assumptions and constraints (e.g., no frameworks, static hosting).
 
 ### 1.2 Set Up Development Environment
-- [ ] Install Node.js and npm (for Webpack and build tools).
-- [ ] Set up Git repository (initialize if not done, configure remote).
-- [ ] Install code editor extensions (e.g., for HTML, CSS, JS linting).
-- [ ] Configure local development server (e.g., using Webpack dev server).
+- [x] Install Node.js and npm (for Webpack and build tools).
+- [x] Set up Git repository (initialize if not done, configure remote).
+- [x] Install code editor extensions (e.g., for HTML, CSS, JS linting).
+- [x] Configure local development server (e.g., using Webpack dev server).
 
 ### 1.3 Create Project Structure
-- [ ] Create source directory structure:
+- [x] Create source directory structure:
   - `src/` for source files (HTML templates, CSS, JS, JSON).
   - `public/` for static assets (images, robots.txt).
   - `docs/` for documentation (already exists).
   - `dist/` or `build/` for generated files.
-- [ ] Initialize package.json with project metadata and scripts.
-- [ ] Set up .gitignore (exclude node_modules, dist/, etc.).
-- [ ] Create initial README.md with project description and setup instructions.
+- [x] Initialize package.json with project metadata and scripts.
+- [x] Set up .gitignore (exclude node_modules, dist/, etc.).
+- [x] Create initial README.md with project description and setup instructions.
 
 ### 1.4 Configure Build Tools
-- [ ] Install Webpack and Handlebars via npm.
-- [ ] Create webpack.config.js for bundling and templating.
-- [ ] Set up build scripts in package.json (build, dev, clean).
-- [ ] Configure Handlebars for HTML templating with JSON data.
+- [x] Install Webpack and Handlebars via npm.
+- [x] Create webpack.config.js for bundling and templating.
+- [x] Set up build scripts in package.json (build, dev, clean).
+- [x] Configure Handlebars for HTML templating with JSON data.
 
 ## Phase 2: Core Architecture Implementation
 
@@ -75,10 +75,10 @@ This document provides a comprehensive, phased task list for building the Person
 ## Phase 3: Feature Development and Enhancement
 
 ### 3.1 Develop Projects Showcase
-- [ ] Populate projects section with data from JSON.
-- [ ] Ensure each project tile has a link to repository/demo.
-- [ ] Add project descriptions, technologies used, and images if available.
-- [ ] Implement grid or list layout for projects.
+- [x] Populate projects section with data from JSON.
+- [x] Ensure each project tile has a link to repository/demo.
+- [x] Add project descriptions, technologies used, and images if available.
+- [x] Implement grid or list layout for projects.
 
 ### 3.2 Add Professional Links and Contact
 - [ ] Include links to GitHub, LinkedIn, freeCodeCamp, HackerRank.
@@ -104,9 +104,9 @@ This document provides a comprehensive, phased task list for building the Person
 - [ ] Validate links (internal navigation, external profiles).
 
 ### 4.2 Cross-Browser and Device Testing
-- [ ] Test in multiple browsers (Chrome, Firefox, Safari, Edge).
-- [ ] Verify responsive design on various screen sizes.
-- [ ] Check performance (page load times, Lighthouse scores).
+- [x] Test in multiple browsers (Chrome, Firefox, Safari, Edge).
+- [x] Verify responsive design on various screen sizes.
+- [x] Check performance (page load times, Lighthouse scores).
 
 ### 4.3 Accessibility and Usability Testing
 - [ ] Run accessibility audits (e.g., WAVE, axe).
@@ -126,9 +126,9 @@ This document provides a comprehensive, phased task list for building the Person
 - [ ] Ensure all content is finalized and proofread.
 
 ### 5.2 Deploy to GitHub Pages
-- [ ] Set up GitHub Pages in repository settings.
-- [ ] Configure build and deployment workflow (GitHub Actions if needed).
-- [ ] Deploy and test live site.
+- [x] Set up GitHub Pages in repository settings.
+- [x] Configure build and deployment workflow (GitHub Actions if needed).
+- [x] Deploy and test live site.
 
 ### 5.3 Documentation and Handover
 - [ ] Update README with usage instructions.
