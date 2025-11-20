@@ -12,3 +12,8 @@ dist/
 build/
 .env
 .DS_Store
+
+Thumbs.db
+
+# Editor settings
+.vscode/
