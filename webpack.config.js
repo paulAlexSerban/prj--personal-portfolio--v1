@@ -1,5 +1,6 @@
 const path = require('path');
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -20,6 +21,11 @@ module.exports = {
       entry: path.join(__dirname, 'src/templates', '*.hbs'),
       output: path.join(__dirname, 'dist', '[name].html'),
       data: path.join(__dirname, 'src/data', 'data.json'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, 'src/styles/styles.css'), to: path.resolve(__dirname, 'dist/styles.css') },
+      ],
     }),
   ],
   mode: 'development',

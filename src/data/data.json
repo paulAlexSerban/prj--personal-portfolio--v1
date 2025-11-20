@@ -4,6 +4,26 @@
       "title": "Personal Portfolio",
       "description": "A simple, static personal portfolio website to showcase projects, coursework, and software engineering skills.",
       "link": "https://github.com/paulAlexSerban/prj--personal-portfolio--v1"
+    },
+    {
+      "title": "Sample Project",
+      "description": "This is a sample project description.",
+      "link": "https://github.com/paulAlexSerban/sample-project"
+    },
+    {
+      "title": "Portfolio Website",
+      "description": "A personal portfolio website built with HTML, CSS, and JavaScript.",
+      "link": "https://github.com/paulAlexSerban/portfolio-website"
+    },
+    {
+      "title": "Weather App",
+      "description": "A weather application that fetches real-time weather data using an API.",
+      "link": "https://github.com/paulAlexSerban/weather-app"
+    },
+    {
+      "title": "Task Manager",
+      "description": "A simple task management app with CRUD functionality.",
+      "link": "https://github.com/paulAlexSerban/task-manager"
     }
   ]
 }
