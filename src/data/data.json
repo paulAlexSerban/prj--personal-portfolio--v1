@@ -25,5 +25,15 @@
       "description": "A simple task management app with CRUD functionality.",
       "link": "https://github.com/paulAlexSerban/task-manager"
     }
-  ]
+  ],
+  "aboutMe": {
+    "title": "About Me",
+    "description": "Hello! I am a passionate software engineer with a focus on building efficient and user-friendly web applications. I enjoy learning new technologies and solving challenging problems."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "Feel free to reach out to me via email or connect with me on LinkedIn.",
+    "email": "paul.serban@example.com",
+    "linkedin": "https://linkedin.com/in/paulserban"
+  }
 }

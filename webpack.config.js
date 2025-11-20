@@ -1,6 +1,8 @@
 const path = require('path');
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -29,4 +31,11 @@ module.exports = {
     }),
   ],
   mode: 'development',
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin(),
+    ],
+  },
 };

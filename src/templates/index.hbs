@@ -20,6 +20,16 @@
       </div>
       {{/each}}
     </section>
+    <section id="about-me" aria-labelledby="about-me-title">
+      <h2 id="about-me-title">{{aboutMe.title}}</h2>
+      <p>{{aboutMe.description}}</p>
+    </section>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">{{contact.title}}</h2>
+      <p>{{contact.description}}</p>
+      <p>Email: <a href="mailto:{{contact.email}}" aria-label="Email {{contact.email}}">{{contact.email}}</a></p>
+      <p>LinkedIn: <a href="{{contact.linkedin}}" target="_blank" aria-label="Visit my LinkedIn profile">Connect with me</a></p>
+    </section>
   </main>
 </body>
 </html>

@@ -32,6 +32,7 @@ h1 {
   padding: 1rem;
   text-align: center;
   width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-tile h2 {
@@ -45,6 +46,76 @@ h1 {
 
 .project-tile a:hover {
   text-decoration: underline;
+}
+
+.project-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* About Me Section */
+#about-me {
+  padding: 2rem;
+  background: #f9f9f9;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#about-me p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Contact Section */
+#contact {
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+#contact a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Accessibility Improvements */
+a {
+  outline: none;
+}
+
+a:focus {
+  outline: 2px dashed #007BFF;
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Responsive Design */
