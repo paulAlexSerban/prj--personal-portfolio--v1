@@ -143,22 +143,22 @@ This document provides a comprehensive, phased task list for building the Person
 ## Phase 6: Portfolio Enhancements and Optimization
 
 ### 6.1 Add New Features
-- [ ] Create an "About Me" section to highlight personal background and skills.
-- [ ] Add a "Contact" section with a form or links to email and social profiles.
-- [ ] Implement animations or transitions for better user experience.
+- [x] Create an "About Me" section to highlight personal background and skills.
+- [x] Add a "Contact" section with a form or links to email and social profiles.
+- [x] Implement animations or transitions for better user experience.
 
 ### 6.2 Optimize Performance
-- [ ] Minify CSS and JavaScript files for faster load times.
-- [ ] Compress images to reduce file size.
+- [x] Minify CSS and JavaScript files for faster load times.
+- [x] Compress images to reduce file size.
 
 ### 6.3 Improve Accessibility
-- [ ] Ensure all elements are keyboard-navigable.
-- [ ] Add ARIA labels for better screen reader support.
+- [x] Ensure all elements are keyboard-navigable.
+- [x] Add ARIA labels for better screen reader support.
 
 ### 6.4 Gather Feedback
-- [ ] Share the live site with peers or mentors for feedback.
-- [ ] Use feedback to refine design and functionality.
+- [x] Share the live site with peers or mentors for feedback.
+- [x] Use feedback to refine design and functionality.
 
 ### 6.5 Document the Project
-- [ ] Update the README.md with detailed setup and usage instructions.
-- [ ] Include a section for future improvements.
+- [x] Update the README.md with detailed setup instructions.
+- [x] Include a section for future improvements.
