@@ -15,7 +15,7 @@ The primary purpose of Personal Portfolio was to:
 
 *   **About Me:** A section introducing personal background and skills.
 *   **Projects Showcase:** A list or gallery of completed projects.
-    *   Includes: React Playground, Bash Script Collection, JS/TS Data Structures & Algorithms, Frontend Playground (Netcentric badge projects), freeCodeCamp certification projects, Open Classrooms certification projects.
+    *   Includes: React Playground, Bash Script Collection, JS/TS Data Structures & Algorithms, Frontend Playground, freeCodeCamp certification projects, Open Classrooms certification projects.
 *   **Coursework:** A section detailing relevant academic or certification coursework.
 
 ## 3. Technical Vision
