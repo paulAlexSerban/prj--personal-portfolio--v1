@@ -1,0 +1,807 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PortfolioPro - Build Your Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --primary: #4361ee;
+            --primary-dark:
+                #3a56d4;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success:
+                #4cc9f0;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0,
+                    0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+                sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width:
+                90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color:
+                var(--primary);
+            color: white;
+            border: none;
+            border-radius:
+                var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition:
+                var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color:
+                var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a08a1;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color:
+                #e11574;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 {
+            margin-bottom:
+                2rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow:
+                var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items:
+                center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero
+      Section */
+        .hero {
+            padding-top: 150px;
+            background: linear-gradient(135deg,
+                    #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content:
+                space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background-color: white;
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pain-point-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .pain-point-card:hover {
+            transform:
+                translateY(-5px);
+        }
+
+        .pain-point-card i {
+            font-size: 2.5rem;
+            color:
+                var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius:
+                var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform:
+                translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display:
+                flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /*
+      Testimonials Section */
+        .testimonials {
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius:
+                var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: "" "; font-size: 5rem; color:
+ var(--light-gray);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display:
+                flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight:
+                bold;
+            margin-right: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background:
+                linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color:
+                white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta-section h2 {
+            color:
+                white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons .btn {
+            margin: 0 10px;
+        }
+
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size:
+                1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color:
+                white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size:
+                    2.4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                display: none;
+                position:
+                    absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0,
+                        0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin:
+                    10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size:
+                    2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">PortfolioPro</a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#cta" class="btn btn-secondary">Get Started</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Showcase Your Skills. Build Your Future.</h1>
+                    <p>Create a stunning portfolio that highlights your achievements and
+                        technical expertise. Attract employers and clients with a
+                        professional online presence.</p>
+                    <div class="cta-buttons">
+                        <a href="#cta" class="btn btn-accent">Start Building Your
+                            Portfolio Today!</a>
+                        <a href="#features" class="btn btn-light">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        alt="Portfolio Example" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>Overcoming Common Challenges</h2>
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Stand Out in the Crowd</h3>
+                    <p>Struggling to stand out in the competitive tech industry? A
+                        professional portfolio sets you apart from other candidates.</p>
+                </div>
+                <div class="pain-point-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Simplify the Process</h3>
+                    <p>Overwhelmed by the complexity of creating a portfolio? Our
+                        templates make it easy to get started quickly.</p>
+                </div>
+                <div class="pain-point-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Cost-Effective Solution</h3>
+                    <p>Worried about the cost of hosting and maintaining your site?
+                        Leverage free tools and hosting to keep costs low.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Everything You Need for a Professional Portfolio</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Beautiful Templates</h3>
+                    <p>Choose from professionally designed templates that reflect your
+                        unique style and personality.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Your portfolio will look great on any device, from desktop to
+                        mobile, ensuring maximum reach.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub Integration</h3>
+                    <p>Seamlessly showcase your projects with direct integration to your
+                        GitHub repositories.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Free Hosting</h3>
+                    <p>Deploy your portfolio for free using GitHub Pages with zero
+                        hosting costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"PortfolioPro helped me create a stunning portfolio that landed
+                            me my dream job at a top tech company. The process was
+                            incredibly simple and the results were professional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div>
+                            <h4>Jessica Smith</h4>
+                            <p>Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a recent graduate, I needed a way to showcase my projects
+                            without spending a fortune. PortfolioPro gave me everything I
+                            needed for free!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AR</div>
+                        <div>
+                            <h4>Alex Rodriguez</h4>
+                            <p>Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I was able to create a professional portfolio in just one
+                            weekend. The templates are beautiful and the GitHub integration
+                            made showcasing my projects a breeze."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MP</div>
+                        <div>
+                            <h4>Michael Park</h4>
+                            <p>UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <h2>Ready to Build Your Professional Portfolio?</h2>
+            <p>Join thousands of developers who have transformed their careers with
+                a stunning online portfolio.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-accent">Start Building Your Portfolio
+                    Today!</a>
+                <a href="#" class="btn btn-light">Get Started for Free with GitHub
+                    Pages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PortfolioPro</h3>
+                    <p>Helping developers showcase their skills and build their careers
+                        with professional portfolios.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 PortfolioPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.hamburger').addEventListener('click', function () { document.querySelector('.nav-links').classList.toggle('active'); }); //
+      Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); const
+                    targetId = this.getAttribute('href'); if (targetId === '#') return; const
+                        targetElement = document.querySelector(targetId); if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, behavior: 'smooth'
+                            }); // Close mobile menu if open
+                            document.querySelector('.nav-links').classList.remove('active');
+                        }
+            });
+        });
+        // Add scroll effect to navbar window.addEventListener('scroll',
+        function() {
+            const header = document.querySelector('header'); if
+                (window.scrollY > 100) {
+                    header.style.boxShadow = '0 4px 12px rgba(0, 0,
+                0, 0.1) '; } else { header.style.boxShadow = '0 2px 5px rgba(0, 0, 0,
+                    0.05)'; } });
+    </script>
+</body>
+
+</html>
