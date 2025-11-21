@@ -187,3 +187,8 @@ This document provides a comprehensive, phased task list for building the Person
 
 - [x] Update the README.md with detailed setup instructions.
 - [x] Include a section for future improvements.
+
+## Phase 7: Improvements
+### 7.1 UI/UX Enhancements
+- [ ] Add font-awesome icons to social links for better visual appeal
+- [ ] Use font-awesome for consistent iconography across the site
