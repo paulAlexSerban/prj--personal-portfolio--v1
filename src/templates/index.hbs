@@ -11,11 +11,9 @@
       <div class="nav-container">
         <div class="nav-logo">My Portfolio</div>
         <ul class="nav-links">
-          <li><a href="#welcome-section">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#coursework">Coursework</a></li>
-          <li><a href="#contact">Contact</a></li>
+          {{#each navigation.links}}
+          <li><a href="{{this.href}}">{{this.name}}</a></li>
+          {{/each}}
         </ul>
         <div class="hamburger">
           <span></span>
@@ -28,11 +26,12 @@
     <!-- Welcome Section -->
     <section id="welcome-section">
       <div class="welcome-content">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Software Developer & Problem Solver</p>
+        <h1>{{welcome.title}}</h1>
+        <p>{{welcome.subtitle}}</p>
         <div class="welcome-buttons">
-          <a href="#projects" class="btn">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          {{#each welcome.buttons}}
+          <a href="{{this.href}}" class="{{this.class}}">{{this.text}}</a>
+          {{/each}}
         </div>
       </div>
       <div class="scroll-indicator">
@@ -44,25 +43,16 @@
     <!-- About Section -->
     <section id="about">
       <div class="container">
-        <h2>About Me</h2>
+        <h2>{{profile.aboutMe.title}}</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>I'm a passionate software developer with a focus on creating
-              efficient, maintainable code. I enjoy solving complex problems and
-              continuously learning new technologies.</p>
-            <p>My journey in software development began with freeCodeCamp and
-              has expanded through various certifications and personal projects.</p>
+            <p>{{profile.aboutMe.description}}</p>
             <div class="skills">
               <h3>Technical Skills</h3>
               <div class="skill-tags">
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Bash Scripting</span>
-                <span class="skill-tag">Data Structures</span>
-                <span class="skill-tag">Algorithms</span>
+                {{#each profile.skills}}
+                <span class="skill-tag">{{this}}</span>
+                {{/each}}
               </div>
             </div>
           </div>
@@ -90,19 +80,12 @@
       <div class="container">
         <h2>Coursework & Certifications</h2>
         <div class="coursework-list">
+          {{#each coursework}}
           <div class="coursework-item">
-            <h3>freeCodeCamp Certifications</h3>
-            <p>Responsive Web Design, JavaScript Algorithms and Data Structures,
-              Front End Development Libraries</p>
+            <h3>{{this.course}}</h3>
+            <p>{{this.details}}</p>
           </div>
-          <div class="coursework-item">
-            <h3>Open Classrooms Certifications</h3>
-            <p>Web Development Fundamentals, Advanced JavaScript Concepts</p>
-          </div>
-          <div div class="coursework-item">
-            <h3>HackerRank Certifications</h3>
-            <p>JavaScript, Problem Solving, 30 Days of Code</p>
-          </div>
+          {{/each}}
         </div>
       </div>
     </section>
@@ -110,52 +93,25 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2>Get In Touch</h2>
+        <h2>{{profile.contact.title}}</h2>
         <div class="contact-content">
           <div class="contact-info">
-            <p>I'm always interested in new opportunities and collaborations.
-              Feel free to reach out!</p>
+            <p>{{profile.contact.description}}</p>
             <div class="contact-details">
               <div class="contact-item">
                 <strong>Email:</strong>
-                <a
-                  href="mailto:your.email@example.com"
-                >your.email@example.com</a>
+                <a href="mailto:{{profile.contact.email}}">{{profile.contact.email}}</a>
               </div>
             </div>
           </div>
           <div class="social-links">
             <h3>Find me online</h3>
             <div class="social-icons">
-              <a
-                id="profile-link"
-                href="https://github.com/yourusername"
-                target="_blank"
-                class="social-icon"
-              >
-                <span>GitHub</span>
+              {{#each profile.socialLinks}}
+              <a href="{{this.url}}" target="_blank" class="social-icon">
+                <span>{{this.platform}}</span>
               </a>
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                class="social-icon"
-              >
-                <span>LinkedIn</span>
-              </a>
-              <a
-                href="https://freecodecamp.org/yourusername"
-                target="_blank"
-                class="social-icon"
-              >
-                <span>freeCodeCamp</span>
-              </a>
-              <a
-                href="https://hackerrank.com/yourusername"
-                target="_blank"
-                class="social-icon"
-              >
-                <span>HackerRank</span>
-              </a>
+              {{/each}}
             </div>
           </div>
         </div>

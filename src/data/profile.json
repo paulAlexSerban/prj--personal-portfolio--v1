@@ -12,5 +12,21 @@
     "description": "Feel free to reach out to me via email or connect with me on LinkedIn.",
     "email": "johndoe@example.com",
     "linkedin": "https://linkedin.com/in/johndoe"
-  }
+  },
+  "skills": [
+    "HTML/CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Bash Scripting",
+    "Data Structures",
+    "Algorithms"
+  ],
+  "socialLinks": [
+    { "platform": "GitHub", "url": "https://github.com/yourusername" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com/in/yourusername" },
+    { "platform": "freeCodeCamp", "url": "https://freecodecamp.org/yourusername" },
+    { "platform": "HackerRank", "url": "https://hackerrank.com/yourusername" }
+  ]
 }

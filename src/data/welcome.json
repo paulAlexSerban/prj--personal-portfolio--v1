@@ -1,0 +1,8 @@
+{
+  "title": "Welcome to My Portfolio",
+  "subtitle": "Software Developer & Problem Solver",
+  "buttons": [
+    { "text": "View My Work", "href": "#projects", "class": "btn" },
+    { "text": "Get In Touch", "href": "#contact", "class": "btn btn-outline" }
+  ]
+}

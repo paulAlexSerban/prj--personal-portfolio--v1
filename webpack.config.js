@@ -27,6 +27,8 @@ module.exports = {
         projects: require(path.join(__dirname, 'src/data/projects.json')),
         profile: require(path.join(__dirname, 'src/data/profile.json')),
         coursework: require(path.join(__dirname, 'src/data/coursework.json')),
+        navigation: require(path.join(__dirname, 'src/data/navigation.json')),
+        welcome: require(path.join(__dirname, 'src/data/welcome.json')),
       },
       helpers: {
         json: function(context) {

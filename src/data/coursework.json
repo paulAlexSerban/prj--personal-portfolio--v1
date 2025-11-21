@@ -1,12 +1,14 @@
 [
   {
-    "course": "Web Development Bootcamp",
-    "institution": "FreeCodeCamp",
-    "year": 2023
+    "course": "freeCodeCamp Certifications",
+    "details": "Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries"
   },
   {
-    "course": "JavaScript Algorithms and Data Structures",
-    "institution": "FreeCodeCamp",
-    "year": 2024
+    "course": "Open Classrooms Certifications",
+    "details": "Web Development Fundamentals, Advanced JavaScript Concepts"
+  },
+  {
+    "course": "HackerRank Certifications",
+    "details": "JavaScript, Problem Solving, 30 Days of Code"
   }
 ]
