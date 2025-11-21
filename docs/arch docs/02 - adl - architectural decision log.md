@@ -100,4 +100,34 @@ This section contains Architectural Decision Records (ADRs) documenting key deci
 
 **Status:** Accepted
 
+### ADR 008: Styling with SCSS
+
+**Context:** The project required a more maintainable and scalable approach to styling. CSS was initially used, but SCSS was introduced to leverage features like variables, nesting, and mixins.
+
+**Decision:** Use SCSS for styling instead of plain CSS.
+
+**Consequences:**
+
+- Positive: Improved maintainability and scalability of styles.
+- Positive: Easier to manage design tokens (e.g., colors, typography).
+- Negative: Requires additional build step to compile SCSS to CSS.
+- Risk: Developers need to be familiar with SCSS syntax.
+
+**Status:** Accepted
+
+### ADR 009: Transpiling with Babel
+
+**Context:** The project uses modern JavaScript (ES6+), which may not be supported in all browsers. Babel was introduced to ensure compatibility.
+
+**Decision:** Use Babel to transpile ES6+ JavaScript to ES5.
+
+**Consequences:**
+
+- Positive: Ensures compatibility with older browsers.
+- Positive: Allows the use of modern JavaScript features.
+- Negative: Adds a build step, increasing complexity.
+- Risk: Requires maintaining Babel configuration.
+
+**Status:** Accepted
+
 This architectural documentation provides the foundation for detailed system design and implementation. It should be reviewed and updated as the project evolves.

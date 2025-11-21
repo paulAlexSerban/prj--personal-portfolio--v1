@@ -1,8 +1,10 @@
 # Build Process Details
-- Use Webpack to bundle JS and CSS.
+- Use Webpack to bundle JS and SCSS.
+- SCSS is compiled to CSS using `sass-loader` and `MiniCssExtractPlugin`.
+- Babel transpiles modern JavaScript (ES6+) to ensure browser compatibility.
 - Handlebars processes templates with JSON data.
-- Output static HTML, CSS, JS to dist/ folder.
-- GitHub Pages serves from dist/ or root depending on configuration.
+- Output static HTML, CSS, JS to `dist/` folder.
+- GitHub Pages serves from `dist/` or root depending on configuration.
 
 ### Content Schema
 Define JSON schemas for projects, profile, etc., to ensure consistency.
