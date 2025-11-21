@@ -1,9 +1,9 @@
 const path = require('path');
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Handlebars = require('handlebars');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/scripts/index.js',
@@ -16,6 +16,24 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
     ],
   },
@@ -36,10 +54,8 @@ module.exports = {
         }
       }
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: path.resolve(__dirname, 'src/styles/styles.css'), to: path.resolve(__dirname, 'dist/styles.css') },
-      ],
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
     }),
   ],
   mode: 'development',

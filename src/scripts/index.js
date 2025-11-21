@@ -1,3 +1,5 @@
+import '../styles/styles.scss';
+
 (() => {
   // script.js
   document.addEventListener("DOMContentLoaded", function () {
