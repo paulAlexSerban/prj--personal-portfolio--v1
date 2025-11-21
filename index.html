@@ -8,9 +8,21 @@
 </head>
 <body>
   <header>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#welcome-section">Welcome</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
     <h1>Welcome to My Portfolio</h1>
   </header>
   <main>
+    <section id="welcome-section">
+      <h1>Welcome</h1>
+      <p>Discover my projects and get to know me!</p>
+    </section>
     <section id="projects">
       <div class="project-tile">
         <h2>Personal Portfolio</h2>
@@ -38,6 +50,26 @@
         <a href="https://github.com/paulAlexSerban/task-manager" target="_blank">View Project</a>
       </div>
     </section>
+    <section id="about-me" aria-labelledby="about-me-title">
+      <h2 id="about-me-title">About Me</h2>
+      <p>I am a passionate software engineer with a focus on building efficient and user-friendly web applications. I enjoy learning new technologies and solving challenging problems.</p>
+      <p>Skills: JavaScript, HTML, CSS, React, Node.js, and more.</p>
+    </section>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+      <ul>
+        <li><a href="https://github.com/paulAlexSerban" target="_blank" aria-label="GitHub Profile">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/paulserban" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a></li>
+        <li><a href="https://www.freecodecamp.org/paulserban" target="_blank" aria-label="freeCodeCamp Profile">freeCodeCamp</a></li>
+        <li><a href="https://www.hackerrank.com/paulserban" target="_blank" aria-label="HackerRank Profile">HackerRank</a></li>
+        <li><a href="mailto:paul.serban@example.com" aria-label="Email Paul Serban">Email</a></li>
+      </ul>
+    </section>
   </main>
+  <script>
+    const projects = [{"title":"Personal Portfolio","description":"A simple, static personal portfolio website to showcase projects, coursework, and software engineering skills.","link":"https://github.com/paulAlexSerban/prj--personal-portfolio--v1"},{"title":"Sample Project","description":"This is a sample project description.","link":"https://github.com/paulAlexSerban/sample-project"},{"title":"Portfolio Website","description":"A personal portfolio website built with HTML, CSS, and JavaScript.","link":"https://github.com/paulAlexSerban/portfolio-website"},{"title":"Weather App","description":"A weather application that fetches real-time weather data using an API.","link":"https://github.com/paulAlexSerban/weather-app"},{"title":"Task Manager","description":"A simple task management app with CRUD functionality.","link":"https://github.com/paulAlexSerban/task-manager"}];
+    const profile = {"name":"John Doe","title":"Full Stack Developer","github":"https://github.com/johndoe","linkedin":"https://linkedin.com/in/johndoe","aboutMe":{"title":"About Me","description":"Hello! I am a passionate software engineer with a focus on building efficient and user-friendly web applications. I enjoy learning new technologies and solving challenging problems."},"contact":{"title":"Contact Me","description":"Feel free to reach out to me via email or connect with me on LinkedIn.","email":"johndoe@example.com","linkedin":"https://linkedin.com/in/johndoe"}};
+    const coursework = [{"course":"Web Development Bootcamp","institution":"FreeCodeCamp","year":2023},{"course":"JavaScript Algorithms and Data Structures","institution":"FreeCodeCamp","year":2024}];
+  </script>
 </body>
 </html>
