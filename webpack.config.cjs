@@ -66,6 +66,14 @@ module.exports = {
       new TerserPlugin(),
     ],
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
+    open: true,
+  },
 };
 
 // Register custom Handlebars helper for JSON stringification
