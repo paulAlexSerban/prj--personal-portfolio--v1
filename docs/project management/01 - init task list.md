@@ -58,12 +58,12 @@ This document provides a comprehensive, phased task list for building the Person
 
 ### 2.2 Implement CSS Styling
 
-- [ ] Create styles.css linked to HTML.
-- [ ] Style welcome section to full viewport height.
-- [ ] Implement fixed navbar at top of viewport.
-- [ ] Add responsive design with at least one media query.
-- [ ] Style project tiles and ensure visual hierarchy.
-- [ ] Apply basic accessibility (color contrast, focus states).
+- [x] Create styles.css linked to HTML.
+- [x] Style welcome section to full viewport height.
+- [x] Implement fixed navbar at top of viewport.
+- [x] Add responsive design with at least one media query.
+- [x] Style project tiles and ensure visual hierarchy.
+- [x] Apply basic accessibility (color contrast, focus states).
 
 ### 2.3 Implement JavaScript Functionality
 

@@ -1,0 +1,568 @@
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category {
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-name {
+  min-width: 100px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.skill-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--tertiary-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Add these styles to your existing CSS */
+
+/* Competency Matrix Styles */
+.matrix-nav {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.matrix-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.matrix-tab {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+}
+
+.matrix-tab:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.matrix-tab.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-bg);
+  font-weight: 500;
+}
+
+.competency-matrix {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.matrix-domain {
+  display: none;
+}
+
+.matrix-domain.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.domain-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.domain-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.domain-proficiency {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proficiency-level {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.proficiency-bar {
+  width: 120px;
+  height: 6px;
+  background: var(--tertiary-bg);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.proficiency-fill {
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.field-card {
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.field-title {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.category-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  background: var(--secondary-bg);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.subject-item:hover {
+  background: var(--primary-bg);
+  transform: translateX(5px);
+}
+
+.subject-item span {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.subject-proficiency {
+  width: 60px;
+  height: 4px;
+  background: var(--tertiary-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.subject-proficiency::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* Proficiency level colors based on 10-point scale */
+.subject-item[data-proficiency="1"] .subject-proficiency::after,
+.subject-item[data-proficiency="2"] .subject-proficiency::after,
+.subject-item[data-proficiency="3"] .subject-proficiency::after {
+  background: #ff6b6b;
+  width: 30%;
+}
+
+.subject-item[data-proficiency="4"] .subject-proficiency::after,
+.subject-item[data-proficiency="5"] .subject-proficiency::after,
+.subject-item[data-proficiency="6"] .subject-proficiency::after {
+  background: #ffd93d;
+  width: 60%;
+}
+
+.subject-item[data-proficiency="7"] .subject-proficiency::after,
+.subject-item[data-proficiency="8"] .subject-proficiency::after {
+  background: #6bcf7f;
+  width: 80%;
+}
+
+.subject-item[data-proficiency="9"] .subject-proficiency::after,
+.subject-item[data-proficiency="10"] .subject-proficiency::after {
+  background: #4ecdc4;
+  width: 100%;
+}
+
+/* Competency Legend */
+.competency-legend {
+  background: var(--tertiary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.competency-legend h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.level-1-3 {
+  background: #ff6b6b;
+}
+.level-4-6 {
+  background: #ffd93d;
+}
+.level-7-8 {
+  background: #6bcf7f;
+}
+.level-9-10 {
+  background: #4ecdc4;
+}
+
+.legend-item span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .matrix-tabs {
+    flex-direction: column;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .domain-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .legend-items {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .field-card {
+    padding: 1rem;
+  }
+
+  .competency-matrix {
+    padding: 1rem;
+  }
+}
+
+/* Skills Section Styles */
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.competency-category {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.competency-category:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.category-icon {
+    font-size: 1.5rem;
+}
+
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-item {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+/* Proficiency levels with subtle color coding */
+.skill-item.expert {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.skill-item.advanced {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.skill-item.learning {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+    border: 1px dashed var(--border-color);
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+/* Specializations Grid */
+.specializations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.specialization-card {
+    background: var(--tertiary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.specialization-card:hover {
+    border-color: var(--accent-color);
+}
+
+.specialization-card h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.specialization-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.specialization-skills span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.specialization-skills span:last-child {
+    border-bottom: none;
+}
+
+/* Methodologies Section */
+.methodologies-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.methodologies-section h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.methodologies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.methodology-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--tertiary-bg);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.methodology-item:hover {
+    transform: translateX(5px);
+    border-left: 3px solid var(--accent-color);
+}
+
+.methodology-item strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.methodology-item span {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .competencies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .specializations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .methodologies-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .competency-category {
+        padding: 1.5rem;
+    }
+    
+    .skills-cloud {
+        gap: 0.6rem;
+    }
+    
+    .skill-item {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animation for skill items */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-item:nth-child(6) { animation-delay: 0.6s; }

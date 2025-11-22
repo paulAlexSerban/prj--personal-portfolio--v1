@@ -1,0 +1,117 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.contact-detail {
+  strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--text-primary);
+    }
+  }
+}
+
+.contact-links {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: var(--transition);
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+  }
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-color);
+  color: var(--primary-bg);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: bold;
+}
+
+.social-info {
+  strong {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.social-info {
+  span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+}
