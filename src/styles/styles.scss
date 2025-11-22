@@ -1,16 +1,16 @@
-@use "./theme.scss";
-@use "./base.scss";
+@use "./partials/theme.scss";
+@use "./partials/base.scss";
 
-@use "./grid.scss";
-@use "./typography.scss";
-@use "./navigation.scss";
-@use "./hero.scss";
-@use "./sections.scss";
-@use "./about.scss";
-@use "./skills.scss";
-@use "./projects.scss";
-@use "./experience.scss";
-@use "./contact.scss";
+@use "./partials/grid.scss";
+@use "./partials/typography.scss";
+@use "./partials/navigation.scss";
+@use "./partials/hero.scss";
+@use "./partials/sections.scss";
+@use "./partials/about.scss";
+@use "./partials/skills.scss";
+@use "./partials/projects.scss";
+@use "./partials/experience.scss";
+@use "./partials/contact.scss";
 
 /* Design System Specific Styles */
 .colors-grid {

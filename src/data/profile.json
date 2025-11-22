@@ -1,32 +1,21 @@
 {
-  "name": "John Doe",
-  "title": "Full Stack Developer",
-  "github": "https://github.com/johndoe",
-  "linkedin": "https://linkedin.com/in/johndoe",
+  "name": "Paul Serban",
+  "title": "Front-end Software Engineer",
   "aboutMe": {
-    "title": "About Me",
-    "description": "Hello! I am a passionate software engineer with a focus on building efficient and user-friendly web applications. I enjoy learning new technologies and solving challenging problems."
-  },
-  "contact": {
-    "title": "Contact Me",
-    "description": "Feel free to reach out to me via email or connect with me on LinkedIn.",
-    "email": "johndoe@example.com",
-    "linkedin": "https://linkedin.com/in/johndoe"
+    "title": "Engineering with Purpose",
+    "description": "I specialize in building robust, scalable software systems that solve real-world problems. My approach combines technical excellence with business understanding to deliver impactful solutions."
   },
   "skills": [
-    "HTML/CSS",
-    "JavaScript",
-    "TypeScript",
+    "Responsive Web Design",
+    "JavaScript / TypeScript",
+    "Front-end Build Systems",
     "React",
-    "Node.js",
-    "Bash Scripting",
-    "Data Structures",
-    "Algorithms"
+    "Next.js",
+    "GraphQL"
   ],
-  "socialLinks": [
-    { "platform": "GitHub", "url": "https://github.com/yourusername" },
-    { "platform": "LinkedIn", "url": "https://linkedin.com/in/yourusername" },
-    { "platform": "freeCodeCamp", "url": "https://freecodecamp.org/yourusername" },
-    { "platform": "HackerRank", "url": "https://hackerrank.com/yourusername" }
+  "stats": [
+    { "label": "Projects Completed", "value": 50 },
+    { "label": "Years Experience", "value": 5 },
+    { "label": "Technologies", "value": 25 }
   ]
 }

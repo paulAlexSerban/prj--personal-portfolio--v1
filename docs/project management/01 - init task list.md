@@ -192,3 +192,10 @@ This document provides a comprehensive, phased task list for building the Person
 ### 7.1 UI/UX Enhancements
 - [ ] Add font-awesome icons to social links for better visual appeal
 - [ ] Use font-awesome for consistent iconography across the site
+- [ ] Split stylesheets and JS per component for better maintainability
+- [ ] Implement dark mode toggle for better user experience
+- [ ] Add smooth scrolling for internal navigation links
+- [ ] Improve mobile navigation with a hamburger menu
+- [ ] Add hover effects to project tiles for interactivity
+- [ ] Include a back-to-top button for easier navigation
+- [ ] Use HBS templates for repeated components (navbar, footer)

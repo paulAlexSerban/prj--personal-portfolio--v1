@@ -1,9 +1,9 @@
 {
   "links": [
-    { "name": "Home", "href": "#welcome-section" },
-    { "name": "About", "href": "#about" },
-    { "name": "Projects", "href": "#projects" },
-    { "name": "Coursework", "href": "#coursework" },
-    { "name": "Contact", "href": "#contact" }
+    { "name": "_about", "href": "#about" },
+    { "name": "_skills", "href": "#skills" },
+    { "name": "_projects", "href": "#projects" },
+    { "name": "_experience", "href": "#experience" },
+    { "name": "_contact", "href": "#contact" }
   ]
 }

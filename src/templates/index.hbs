@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Engineering Portfolio</title>
+    <title>{{welcome.title}}</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar" class="glass-nav">
+    <nav id="navbar" class="navbar__base">
         <div class="nav-container">
             <div class="nav-brand">
                 <span class="code-symbol">&lt;/&gt;</span>
                 <span class="dev-name">PAUL_SERBAN</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#welcome-section" class="nav-link">_home</a></li>
-                <li><a href="#about" class="nav-link">_about</a></li>
-                <li><a href="#skills" class="nav-link">_skills</a></li>
-                <li><a href="#projects" class="nav-link">_projects</a></li>
-                <li><a href="#experience" class="nav-link">_experience</a></li>
-                <li><a href="#contact" class="nav-link">_contact</a></li>
+                {{#each navigation.links}}
+                <li><a href="{{this.href}}" class="nav-link">{{this.name}}</a></li>
+                {{/each}}
             </ul>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle">
@@ -36,7 +33,7 @@
         </div>
     </nav>
 
-    <!-- Welcome Section -->
+    {{!-- <!-- Welcome Section -->
     <section id="welcome-section">
         <div class="terminal-window">
             <div class="terminal-header">
@@ -53,12 +50,12 @@
                     <span class="command">cat about_me.txt</span>
                 </div>
                 <div class="terminal-output">
-                    <h1 class="typing-text">Hello, I'm <span class="accent-text">Paul Serban</span></h1>
-                    <p class="typing-text delay-1">Front-end Software Engineer</p>
+                    <h1 class="typing-text">{{welcome.title}}</h1>
+                    <p class="typing-text delay-1">{{welcome.subtitle}}</p>
                     <div class="typing-text delay-2">
-                        <p>> Building scalable solutions with clean, maintainable code</p>
-                        <p>> Passionate about front-end engineering and user experience</p>
-                        <p>> 3+ years crafting digital experiences</p>
+                        {{#each welcome.description}}
+                        <p>> {{this}}</p>
+                        {{/each}}
                     </div>
                 </div>
                 <div class="terminal-line">
@@ -87,35 +84,28 @@
                             <span class="code-lang">javascript</span>
                         </div>
                         <pre><code>const developer = {
-  name: "Paul Serban",
-  role: "Front-end Software Engineer",
+  name: "{{profile.name}}",
+  role: "{{profile.title}}",
   location: "Bucharest, Romania",
   passions: [
-    "Responsive Web Design",
-    "JavaScript / TypeScript",
-    "Front-end Build Systems"
+    {{#each profile.skills}}
+    "{{this}}",
+    {{/each}}
   ],
-  currentlyLearning: ["React", "Next.js", "GraphQL"],
   quote: "First, solve the problem. Then write the code."
 };</code></pre>
                     </div>
                 </div>
                 <div class="about-text">
-                    <h3>Engineering with Purpose</h3>
-                    <p>I specialize in building robust, scalable software systems that solve real-world problems. My approach combines technical excellence with business understanding to deliver impactful solutions.</p>
+                    <h3>{{profile.aboutMe.title}}</h3>
+                    <p>{{profile.aboutMe.description}}</p>
                     <div class="stats-grid">
+                        {{#each profile.stats}}
                         <div class="stat-item">
-                            <div class="stat-number" data-count="50">0</div>
-                            <div class="stat-label">Projects Completed</div>
+                            <div class="stat-number" data-count="{{this.value}}">0</div>
+                            <div class="stat-label">{{this.label}}</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="5">0</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="25">0</div>
-                            <div class="stat-label">Technologies</div>
-                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -627,7 +617,13 @@
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
-                <!-- Projects will be loaded dynamically -->
+                {{#each projects}}
+                <div class="project-item">
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                    <a href="{{this.link}}" target="_blank">View Project</a>
+                </div>
+                {{/each}}
             </div>
         </div>
     </section>
@@ -752,7 +748,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 
     <script src="bundle.js"></script>
 </body>
