@@ -1,13 +1,13 @@
 import "../styles/section-projects.scss";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-button');
     const projectCards = document.querySelectorAll('.project-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(button => button.classList.remove('active'));
             // Add active class to the clicked button
             button.classList.add('active');
 

@@ -1,4 +1,4 @@
-import "../styles/section-navbar.scss";
+import "../styles/navbar.scss";
 
 (() => {
   document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +31,7 @@ import "../styles/section-navbar.scss";
     }
 
     // Mobile Menu Toggle
-    const mobileMenuButton = document.querySelector(".navbar__mobile-menu-btn");
+    const mobileMenuButton = document.querySelector(".navbar__mobile-menu-button");
     const navbarLinks = document.getElementById("navbar-links");
 
     if (mobileMenuButton && navbarLinks) {

@@ -1,4 +1,4 @@
-.btn {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -18,23 +18,23 @@
   overflow: hidden;
 }
 
-.btn:hover {
+.button:hover {
   background: transparent;
   color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px -8px var(--accent-color);
 }
 
-.btn:active {
+.button:active {
   transform: translateY(0);
 }
 
-.btn:focus {
+.button:focus {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
-.btn:disabled {
+.button:disabled {
   background: var(--text-tertiary);
   border-color: var(--text-tertiary);
   color: var(--text-secondary);
@@ -43,7 +43,7 @@
   box-shadow: none;
 }
 
-.btn:disabled:hover {
+.button:disabled:hover {
   background: var(--text-tertiary);
   color: var(--text-secondary);
   transform: none;
@@ -51,84 +51,84 @@
 }
 
 /* Outline Variant */
-.btn-outline {
+.button-outline {
   background: transparent;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
 
-.btn-outline:hover {
+.button-outline:hover {
   background: var(--accent-color);
   color: var(--primary-bg);
 }
 
 /* Button Sizes */
-.btn-sm {
+.button-sm {
   padding: 0.6rem 1.2rem;
   font-size: 0.85rem;
 }
 
-.btn-lg {
+.button-lg {
   padding: 1rem 2rem;
   font-size: 1.1rem;
 }
 
 /* Button with Icon */
-.btn-icon {
+.button-icon {
   padding: 0.8rem;
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.btn-icon .icon {
+.button-icon .icon {
   width: 1.2rem;
   height: 1.2rem;
 }
 
 /* Secondary Button Variant */
-.btn-secondary {
+.button-secondary {
   background: var(--text-secondary);
   border-color: var(--text-secondary);
   color: var(--primary-bg);
 }
 
-.btn-secondary:hover {
+.button-secondary:hover {
   background: transparent;
   color: var(--text-secondary);
 }
 
 /* Danger Button Variant */
-.btn-danger {
+.button-danger {
   background: var(--accent-secondary);
   border-color: var(--accent-secondary);
   color: white;
 }
 
-.btn-danger:hover {
+.button-danger:hover {
   background: transparent;
   color: var(--accent-secondary);
 }
 
 /* Ghost Button Variant */
-.btn-ghost {
+.button-ghost {
   background: transparent;
   border-color: transparent;
   color: var(--text-primary);
 }
 
-.btn-ghost:hover {
+.button-ghost:hover {
   background: var(--tertiary-bg);
   border-color: var(--border-color);
   color: var(--text-primary);
 }
 
 /* Loading State */
-.btn-loading {
+.button-loading {
   position: relative;
   color: transparent;
 }
 
-.btn-loading::after {
+.button-loading::after {
   content: "";
   position: absolute;
   width: 1rem;
@@ -149,25 +149,25 @@
 }
 
 /* Button Group */
-.btn-group {
+.button-group {
   display: inline-flex;
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid var(--border-color);
 }
 
-.btn-group .btn {
+.button-group .button {
   border-radius: 0;
   border: none;
   margin: 0;
 }
 
-.btn-group .btn:not(:last-child) {
+.button-group .button:not(:last-child) {
   border-right: 1px solid var(--border-color);
 }
 
 /* Pulse Animation for Call-to-Action */
-.btn-pulse {
+.button-pulse {
   animation: pulse 2s infinite;
 }
 
@@ -185,17 +185,17 @@
 
 /* Responsive Buttons */
 @media (max-width: 768px) {
-  .btn {
+  .button {
     padding: 0.7rem 1.2rem;
     font-size: 0.9rem;
   }
 
-  .btn-lg {
+  .button-lg {
     padding: 0.9rem 1.8rem;
     font-size: 1rem;
   }
 
-  .btn-sm {
+  .button-sm {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
@@ -222,7 +222,7 @@
   margin-bottom: 0.5rem;
 }
 
-.variant-group .btn {
+.variant-group .button {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -233,25 +233,25 @@
     align-items: flex-start;
   }
 
-  .variant-group .btn {
+  .variant-group .button {
     margin-right: 0;
     margin-bottom: 0.5rem;
     width: 100%;
     justify-content: center;
   }
 
-  .btn-group {
+  .button-group {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn-group .btn {
+  .button-group .button {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
   }
 
-  .btn-group .btn:last-child {
+  .button-group .button:last-child {
     border-bottom: none;
   }
 }

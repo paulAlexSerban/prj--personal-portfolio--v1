@@ -205,7 +205,7 @@ import "../styles/styles.scss";
   // loadProjects();
 
   // Mobile menu functionality
-  // const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  // const mobileMenuBtn = document.querySelector(".mobile-menu-button");
   // const navLinks = document.querySelector(".nav-links");
 
   // mobileMenuBtn.addEventListener("click", function () {
@@ -462,7 +462,7 @@ import "../styles/styles.scss";
   // });
 
   // Component copy functionality
-  // const copyButtons = document.querySelectorAll(".btn");
+  // const copyButtons = document.querySelectorAll(".button");
   // copyButtons.forEach((button) => {
   //   button.addEventListener("click", function (e) {
   //     if (this.textContent.includes("View Source")) {
@@ -505,7 +505,7 @@ import "../styles/styles.scss";
   //       // Add focus styles for accessibility
   //       const focused = document.activeElement;
   //       if (
-  //         focused.classList.contains("btn") ||
+  //         focused.classList.contains("button") ||
   //         focused.classList.contains("matrix-tab") ||
   //         focused.classList.contains("skill-item")
   //       ) {
