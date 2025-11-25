@@ -1,0 +1,48 @@
+.section-hero {
+  &__base {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      135deg,
+      var(--primary-bg) 0%,
+      var(--secondary-bg) 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+  }
+
+  &__scroll-line {
+    width: 1px;
+    height: 30px;
+    background: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    animation: scroll-line 2s infinite;
+  }
+
+  @keyframes scroll-line {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+  }
+}

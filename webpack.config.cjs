@@ -6,10 +6,11 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const Handlebars = require("handlebars");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { get } = require("http");
 
 const DATA_DIR = path.join(__dirname, "src", "data");
 
-const fetchJsonData = (dataDir) => {
+const getJsonData = (dataDir) => {
   const dataDirFiles = fs.readdirSync(dataDir);
   const dataDirContent = {};
 
@@ -37,10 +38,25 @@ const fetchJsonData = (dataDir) => {
   return dataDirContent;
 };
 
+const getJsEntries = (scriptsDir) => {
+  const scriptsDirFiles = fs.readdirSync(scriptsDir);
+  const entries = {};
+
+  for (const file of scriptsDirFiles) {
+    if (path.extname(file) === ".js") {
+      const key = path.basename(file, ".js");
+      const filePath = path.join(scriptsDir, file);
+      entries[key] = filePath;
+    }
+  }
+
+  return entries;
+};
+
 module.exports = {
-  entry: "./src/scripts/index.js",
+  entry: getJsEntries(path.join(__dirname, "src", "scripts")),
   output: {
-    filename: "bundle.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -70,13 +86,14 @@ module.exports = {
       // hbs entry without _partials
       entry: path.join(__dirname, "src/templates", "*.hbs"),
       output: path.join(__dirname, "dist", "[name].html"),
-      data: fetchJsonData(DATA_DIR),
+      data: getJsonData(DATA_DIR),
       helpers: {
         json: (context) => JSON.stringify(context),
       },
+      partials: [path.join(__dirname, "src/templates/partials", "*.hbs")],
     }),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "[name].css", // Use entry name to generate unique CSS files
     }),
   ],
   mode: "development",

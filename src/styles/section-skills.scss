@@ -49,69 +49,7 @@
 
 /* Add these styles to your existing CSS */
 
-/* Competency Matrix Styles */
-.matrix-nav {
-  margin-bottom: 3rem;
-  border-bottom: 1px solid var(--border-color);
-}
 
-.matrix-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.matrix-tab {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: var(--transition);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.9rem;
-}
-
-.matrix-tab:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-
-.matrix-tab.active {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--primary-bg);
-  font-weight: 500;
-}
-
-.competency-matrix {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--shadow);
-}
-
-.matrix-domain {
-  display: none;
-}
-
-.matrix-domain.active {
-  display: block;
-  animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .domain-header {
   display: flex;
@@ -322,34 +260,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .matrix-tabs {
-    flex-direction: column;
-  }
 
-  .matrix-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .domain-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .legend-items {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .field-card {
-    padding: 1rem;
-  }
-
-  .competency-matrix {
-    padding: 1rem;
-  }
-}
 
 /* Skills Section Styles */
 .competencies-grid {

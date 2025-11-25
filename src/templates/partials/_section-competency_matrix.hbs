@@ -1,0 +1,289 @@
+    <section id="competency_matrix" class="section-padding">
+        <link rel="stylesheet" href="section-competency_matrix.css" />
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// competency_matrix</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">A structured framework mapping technical expertise across software engineering domains</p>
+            </div>
+
+            <!-- Competency Matrix Navigation -->
+            <div class="matrix-nav">
+                <div class="matrix-tabs">
+                    <button class="matrix-tab active" data-domain="architecture">Architecture</button>
+                    <button class="matrix-tab" data-domain="backend">Backend</button>
+                    <button class="matrix-tab" data-domain="frontend">Frontend</button>
+                    <button class="matrix-tab" data-domain="cloud">Cloud & DevOps</button>
+                    <button class="matrix-tab" data-domain="data">Data Engineering</button>
+                    <button class="matrix-tab" data-domain="testing">Testing & QA</button>
+                </div>
+            </div>
+
+            <!-- Competency Matrix Container -->
+            <div class="competency-matrix">
+                <!-- Architecture Domain -->
+                <div class="matrix-domain active" id="architecture">
+                    <div class="domain-header">
+                        <h3>System Architecture & Design</h3>
+                        <div class="domain-proficiency">
+                            <span class="proficiency-level">Level 8/10</span>
+                            <div class="proficiency-bar">
+                                <div class="proficiency-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="matrix-grid">
+                        <div class="field-card">
+                            <h4 class="field-title">Design Patterns</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">Creational Patterns</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="9">
+                                            <span>Factory Method</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Singleton</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Builder</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">Structural Patterns</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Adapter</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Facade</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <h4 class="field-title">System Design</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">Scalability</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Load Balancing</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Caching Strategies</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">Architecture Styles</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="9">
+                                            <span>Microservices</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Event-Driven</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Domain -->
+                <div class="matrix-domain" id="backend">
+                    <div class="domain-header">
+                        <h3>Backend Development</h3>
+                        <div class="domain-proficiency">
+                            <span class="proficiency-level">Level 9/10</span>
+                            <div class="proficiency-bar">
+                                <div class="proficiency-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="matrix-grid">
+                        <div class="field-card">
+                            <h4 class="field-title">API Development</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">REST APIs</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="9">
+                                            <span>Express.js</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>FastAPI</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">GraphQL</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Apollo Server</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <h4 class="field-title">Database Systems</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">SQL Databases</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>PostgreSQL</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>MySQL</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">NoSQL Databases</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>MongoDB</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="6">
+                                            <span>Redis</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend Domain -->
+                <div class="matrix-domain" id="frontend">
+                    <div class="domain-header">
+                        <h3>Frontend Development</h3>
+                        <div class="domain-proficiency">
+                            <span class="proficiency-level">Level 8/10</span>
+                            <div class="proficiency-bar">
+                                <div class="proficiency-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="matrix-grid">
+                        <div class="field-card">
+                            <h4 class="field-title">Rendering Patterns</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">Performance</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Lighthouse Metrics</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>RUM Metrics</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Hydration Strategies</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">Optimization</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="9">
+                                            <span>Code Splitting</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Lazy Loading</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-card">
+                            <h4 class="field-title">Accessibility</h4>
+                            <div class="categories-list">
+                                <div class="category-item">
+                                    <span class="category-name">WCAG Compliance</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Screen Readers</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Keyboard Navigation</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <span class="category-name">ARIA</span>
+                                    <div class="subjects-grid">
+                                        <div class="subject-item" data-proficiency="8">
+                                            <span>Landmark Roles</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                        <div class="subject-item" data-proficiency="7">
+                                            <span>Live Regions</span>
+                                            <div class="subject-proficiency"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="competency-legend">
+                    <h4>Proficiency Scale</h4>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <div class="legend-color level-1-3"></div>
+                            <span>1-3: Learning</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color level-4-6"></div>
+                            <span>4-6: Proficient</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color level-7-8"></div>
+                            <span>7-8: Advanced</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color level-9-10"></div>
+                            <span>9-10: Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,30 @@
+  <div class="terminal-window__base">
+    <link rel="stylesheet" href="terminal-window.css" />
+    <div class="terminal-window__header">
+      <div class="terminal-window__buttons">
+        <span class="close"></span>
+        <span class="minimize"></span>
+        <span class="maximize"></span>
+      </div>
+      <div class="terminal-window__title">terminal — zsh — 80x24</div>
+    </div>
+    <div class="terminal-window__body">
+      <div class="terminal-window__line">
+        <span class="prompt">visitor@portfolio:~$</span>
+        <span class="command">cat about_me.txt</span>
+      </div>
+      <div class="terminal-window__output">
+        <h1 class="typing-text">{{welcome.title}}</h1>
+        <p class="typing-text delay-1">{{welcome.subtitle}}</p>
+        <div class="typing-text delay-2">
+          {{#each welcome.description}}
+            <p>> {{this}}</p>
+          {{/each}}
+        </div>
+      </div>
+      <div class="terminal-window__line">
+        <span class="prompt">visitor@portfolio:~$</span>
+        <span class="cursor">|</span>
+      </div>
+    </div>
+  </div>

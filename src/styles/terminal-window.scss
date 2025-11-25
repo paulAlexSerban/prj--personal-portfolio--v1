@@ -1,0 +1,102 @@
+.terminal-window {
+  &__base {
+    width: 90%;
+    max-width: 800px;
+    background: var(--tertiary-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  &__header {
+    background: var(--secondary-bg);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 0.5rem;
+    span {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .close {
+      background: #ff5f56;
+    }
+    .minimize {
+      background: #ffbd2e;
+    }
+    .maximize {
+      background: #27ca3f;
+    }
+  }
+
+  &__title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 1rem;
+  }
+
+  &__body {
+    padding: 2rem;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  &__line {
+    margin-bottom: 1rem;
+
+    .prompt {
+      color: var(--accent-color);
+      margin-right: 0.5rem;
+    }
+
+    .command {
+      color: var(--text-primary);
+    }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+  }
+
+  &__output {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .delay-1 {
+      animation-delay: 1s;
+    }
+    .delay-2 {
+      animation-delay: 2s;
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

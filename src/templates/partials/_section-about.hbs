@@ -1,0 +1,41 @@
+    <section id="about" class="section-padding">
+        <link rel="stylesheet" href="section-about.css" />
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// about_me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">javascript</span>
+                        </div>
+                        <pre><code>const developer = {
+  name: "{{profile.name}}",
+  role: "{{profile.title}}",
+  location: "Bucharest, Romania",
+  passions: [
+    {{#each profile.skills}}
+    "{{this}}",
+    {{/each}}
+  ],
+  quote: "First, solve the problem. Then write the code."
+};</code></pre>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>{{profile.aboutMe.title}}</h3>
+                    <p>{{profile.aboutMe.description}}</p>
+                    <div class="stats-grid">
+                        {{#each profile.stats}}
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="{{this.value}}">0</div>
+                            <div class="stat-label">{{this.label}}</div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
