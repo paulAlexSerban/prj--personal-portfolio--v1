@@ -2,12 +2,12 @@ import "../styles/section-hero.scss";
 
 document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.section-hero__base');
-    const terminalWindow = document.querySelector('.terminal-window__base');
+    const terminalWindow = document.querySelector('.terminal__base');
     const scrollHint = document.querySelector('.section-hero__scroll-hint');
 
     // Text Reveal Animation for terminal output
     const animateTextReveal = () => {
-        const textElements = document.querySelectorAll('.terminal-window__output .text-reveal');
+        const textElements = document.querySelectorAll('.terminal__output .text-reveal');
         textElements.forEach((element, index) => {
             // Split text into characters for animation
             const text = element.textContent;
