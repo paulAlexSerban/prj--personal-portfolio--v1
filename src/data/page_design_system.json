@@ -1,0 +1,15 @@
+{
+  "title": "Paul Serban Portfolio | Design System Documentation",
+  "brand": {
+    "name": "PAUL_SERBAN_DS",
+    "href": "#colors"
+  },
+  "navigation": {
+    "links": [
+      { "name": "colors", "href": "#colors" },
+      { "name": "typography", "href": "#typography" },
+      { "name": "components", "href": "#components" },
+      { "name": "patterns", "href": "#patterns" }
+    ]
+  }
+}

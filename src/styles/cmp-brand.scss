@@ -1,0 +1,18 @@
+.brand {
+  &__base {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+  }
+
+  &__code-symbol {
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  &__dev-name {
+    font-size: 16px;
+  }
+}

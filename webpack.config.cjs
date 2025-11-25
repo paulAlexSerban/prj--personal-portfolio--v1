@@ -6,7 +6,6 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const Handlebars = require("handlebars");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { get } = require("http");
 
 const DATA_DIR = path.join(__dirname, "src", "data");
 
@@ -84,13 +83,13 @@ module.exports = {
   plugins: [
     new HandlebarsPlugin({
       // hbs entry without _partials
-      entry: path.join(__dirname, "src/templates", "*.hbs"),
+      entry: path.join(__dirname, "src/markup", "*.hbs"),
       output: path.join(__dirname, "dist", "[name].html"),
       data: getJsonData(DATA_DIR),
       helpers: {
         json: (context) => JSON.stringify(context),
       },
-      partials: [path.join(__dirname, "src/templates/partials", "*.hbs")],
+      partials: [path.join(__dirname, "src/markup/partials", "*.hbs")],
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css", // Use entry name to generate unique CSS files
@@ -105,9 +104,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    compress: true,
     port: 9000,
-    open: true,
   },
 };
 

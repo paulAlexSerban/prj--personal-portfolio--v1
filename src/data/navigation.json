@@ -1,9 +1,0 @@
-{
-  "links": [
-    { "name": "_about", "href": "#about" },
-    { "name": "_skills", "href": "#skills" },
-    { "name": "_projects", "href": "#projects" },
-    { "name": "_experience", "href": "#experience" },
-    { "name": "_contact", "href": "#contact" }
-  ]
-}

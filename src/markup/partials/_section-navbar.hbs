@@ -1,0 +1,28 @@
+<nav id="navbar" class="navbar__base">
+	<link rel="stylesheet" href="section-navbar.css" />
+
+	<div class="navbar__container">
+
+		{{> partials/_cmp-brand brand=page.brand}}
+
+		<ul class="navbar__links">
+			{{#each page.navigation.links}}
+			<li><a href="{{this.href}}" class="navbar__link">_{{this.name}}</a></li>
+			{{/each}}
+		</ul>
+
+		<div class="navbar__actions">
+			<button class="navbar__theme-toggle" id="themeToggle">
+				<span class="navbar__theme-icon">🌙</span>
+			</button>
+		</div>
+
+		<div class="navbar__mobile-menu-btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+
+	<script src="section-navbar.js"></script>
+</nav>

@@ -1,8 +1,14 @@
 {
-        "name": "Paul Serban Portfolio",
-        "url": "https://www.paulserban.dev",
-        "description": "Front-end Software Engineer Portfolio showcasing projects and skills.",
-        "author": "Paul Serban",
-        "keywords": ["portfolio", "front-end", "software engineer", "projects", "skills"],
-        "dev_name": "PAUL_SERBAN"
+  "name": "Paul Serban Portfolio",
+  "url": "https://paulserban.dev",
+  "description": "Front-end Software Engineer Portfolio showcasing projects and skills.",
+  "author": "Paul Serban",
+  "keywords": [
+    "portfolio",
+    "front-end",
+    "software engineer",
+    "projects",
+    "skills"
+  ],
+  "dev_name": "PAUL_SERBAN"
 }
