@@ -1,14 +1,29 @@
 [
   {
-    "course": "freeCodeCamp Certifications",
-    "details": "Responsive Web Design, JavaScript Algorithms and Data Structures, Front End Development Libraries"
+    "title": "Computer Science Degree",
+    "institution": "University of Technology",
+    "year": "2015 - 2019",
+    "description": "Completed a Bachelor of Science in Computer Science with a focus on software engineering and web development.",
+    "achievements": [
+      "Graduated with Honors",
+      "Awarded for outstanding capstone project in distributed systems"
+    ]
   },
   {
-    "course": "Open Classrooms Certifications",
-    "details": "Web Development Fundamentals, Advanced JavaScript Concepts"
+    "title": "Full-Stack Web Development Bootcamp",
+    "institution": "Code Immersion Institute",
+    "year": "2020",
+    "description": "Intensive bootcamp covering modern web development technologies from front-end frameworks to back-end APIs and databases.",
+    "achievements": [
+      "Developed several full-stack applications",
+      "Gained expertise in React, Node.js, and MongoDB"
+    ]
   },
   {
-    "course": "HackerRank Certifications",
-    "details": "JavaScript, Problem Solving, 30 Days of Code"
+    "title": "Advanced JavaScript Certification",
+    "institution": "Online Learning Platform",
+    "year": "2021",
+    "description": "Specialized certification focusing on advanced JavaScript concepts, including asynchronous programming, design patterns, and performance optimization.",
+    "achievements": []
   }
 ]

@@ -1,0 +1,25 @@
+{
+  "experience": [
+    {
+      "date": "2022 - Present",
+      "title": "Senior Software Engineer",
+      "company": "TechCorp Inc.",
+      "description": "Led development of microservices architecture serving 1M+ users. Improved system performance by 40% through optimization and caching strategies.",
+      "technologies": ["TypeScript", "Node.js", "AWS", "Redis"]
+    },
+    {
+      "date": "2019 - 2024",
+      "title": "Front-end Software Engineer",
+      "company": "Cognizant Netcentric",
+      "description": "Built and maintained websites and web applications using Front-end Core Technologies and React. Implemented Front-end CI/CD pipelines with build tools such as Webpack and Vite.",
+      "technologies": ["Front-end Core Technologies", "TypeScript", "React", "Node.js", "GitHub Actions", "AWS"]
+    },
+    {
+      "date": "2017 - 2019",
+      "title": "Junior Web Developer",
+      "company": "Web Solutions Co.",
+      "description": "Assisted in the development and maintenance of client websites. Focused on front-end implementation and basic back-end scripting.",
+      "technologies": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
+    }
+  ]
+}

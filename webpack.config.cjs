@@ -12,6 +12,7 @@ const DATA_DIR = path.join(__dirname, "src", "data");
 const getJsonData = (dataDir) => {
   const dataDirFiles = fs.readdirSync(dataDir);
   const dataDirContent = {};
+  let allProjectCategories = new Set();
 
   for (const file of dataDirFiles) {
     if (path.extname(file) === ".json") {
@@ -32,8 +33,17 @@ const getJsonData = (dataDir) => {
         throw new Error(`Invalid JSON in file: ${filePath}`);
       }
       dataDirContent[key] = fileContent;
+
+      if (key === "projects" && Array.isArray(fileContent)) {
+        fileContent.forEach((project) => {
+          if (Array.isArray(project.category)) {
+            project.category.forEach((cat) => allProjectCategories.add(cat));
+          }
+        });
+      }
     }
   }
+  dataDirContent.allProjectCategories = Array.from(allProjectCategories);
   return dataDirContent;
 };
 
@@ -88,7 +98,9 @@ module.exports = {
       data: getJsonData(DATA_DIR),
       helpers: {
         json: (context) => JSON.stringify(context),
-		encode: (context) => btoa(context)
+        encode: (context) => btoa(context),
+        multiply: (a, b) => a * b,
+        join: (arr, separator) => arr.join(separator),
       },
       partials: [path.join(__dirname, "src/markup/partials", "*.hbs")],
     }),

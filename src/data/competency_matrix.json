@@ -1,0 +1,247 @@
+{
+  "competency_matrix": {
+    "domains": [
+      {
+        "id": "architecture",
+        "name": "Architecture",
+        "overall_proficiency": 8,
+        "fields": [
+          {
+            "title": "Design Patterns",
+            "categories": [
+              {
+                "name": "Creational Patterns",
+                "subjects": [
+                  {"name": "Factory Method", "proficiency": 9},
+                  {"name": "Singleton", "proficiency": 8},
+                  {"name": "Builder", "proficiency": 7}
+                ]
+              },
+              {
+                "name": "Structural Patterns",
+                "subjects": [
+                  {"name": "Adapter", "proficiency": 8},
+                  {"name": "Facade", "proficiency": 7}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "System Design",
+            "categories": [
+              {
+                "name": "Scalability",
+                "subjects": [
+                  {"name": "Load Balancing", "proficiency": 8},
+                  {"name": "Caching Strategies", "proficiency": 7}
+                ]
+              },
+              {
+                "name": "Architecture Styles",
+                "subjects": [
+                  {"name": "Microservices", "proficiency": 9},
+                  {"name": "Event-Driven", "proficiency": 8}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "backend",
+        "name": "Backend",
+        "overall_proficiency": 9,
+        "fields": [
+          {
+            "title": "API Development",
+            "categories": [
+              {
+                "name": "REST APIs",
+                "subjects": [
+                  {"name": "Express.js", "proficiency": 9},
+                  {"name": "FastAPI", "proficiency": 8}
+                ]
+              },
+              {
+                "name": "GraphQL",
+                "subjects": [
+                  {"name": "Apollo Server", "proficiency": 7}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Database Systems",
+            "categories": [
+              {
+                "name": "SQL Databases",
+                "subjects": [
+                  {"name": "PostgreSQL", "proficiency": 8},
+                  {"name": "MySQL", "proficiency": 7}
+                ]
+              },
+              {
+                "name": "NoSQL Databases",
+                "subjects": [
+                  {"name": "MongoDB", "proficiency": 8},
+                  {"name": "Redis", "proficiency": 6}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "frontend",
+        "name": "Frontend",
+        "overall_proficiency": 8,
+        "fields": [
+          {
+            "title": "Rendering Patterns",
+            "categories": [
+              {
+                "name": "Performance",
+                "subjects": [
+                  {"name": "Lighthouse Metrics", "proficiency": 8},
+                  {"name": "RUM Metrics", "proficiency": 7},
+                  {"name": "Hydration Strategies", "proficiency": 8}
+                ]
+              },
+              {
+                "name": "Optimization",
+                "subjects": [
+                  {"name": "Code Splitting", "proficiency": 9},
+                  {"name": "Lazy Loading", "proficiency": 8}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Accessibility",
+            "categories": [
+              {
+                "name": "WCAG Compliance",
+                "subjects": [
+                  {"name": "Screen Readers", "proficiency": 8},
+                  {"name": "Keyboard Navigation", "proficiency": 7}
+                ]
+              },
+              {
+                "name": "ARIA",
+                "subjects": [
+                  {"name": "Landmark Roles", "proficiency": 8},
+                  {"name": "Live Regions", "proficiency": 7}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cloud",
+        "name": "Cloud & DevOps",
+        "overall_proficiency": 7,
+        "fields": [
+          {
+            "title": "Cloud Providers",
+            "categories": [
+              {
+                "name": "AWS",
+                "subjects": [
+                  {"name": "EC2", "proficiency": 7},
+                  {"name": "S3", "proficiency": 8},
+                  {"name": "Lambda", "proficiency": 6}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Containerization",
+            "categories": [
+              {
+                "name": "Docker",
+                "subjects": [
+                  {"name": "Containerization", "proficiency": 8},
+                  {"name": "Docker Compose", "proficiency": 7}
+                ]
+              },
+              {
+                "name": "Orchestration",
+                "subjects": [
+                  {"name": "Kubernetes", "proficiency": 5}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "name": "Data Engineering",
+        "overall_proficiency": 6,
+        "fields": [
+          {
+            "title": "Data Storage",
+            "categories": [
+              {
+                "name": "Data Warehousing",
+                "subjects": [
+                  {"name": "Redshift", "proficiency": 5},
+                  {"name": "Snowflake", "proficiency": 4}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "ETL & Orchestration",
+            "categories": [
+              {
+                "name": "Data Pipelines",
+                "subjects": [
+                  {"name": "Apache Airflow", "proficiency": 6}
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "testing",
+        "name": "Testing & QA",
+        "overall_proficiency": 8,
+        "fields": [
+          {
+            "title": "Testing Frameworks",
+            "categories": [
+              {
+                "name": "Unit Testing",
+                "subjects": [
+                  {"name": "Jest", "proficiency": 9},
+                  {"name": "React Testing Library", "proficiency": 8}
+                ]
+              },
+              {
+                "name": "E2E Testing",
+                "subjects": [
+                  {"name": "Cypress", "proficiency": 7},
+                  {"name": "Playwright", "proficiency": 6}
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Testing Methodologies",
+            "categories": [
+              {
+                "name": "TDD",
+                "subjects": [
+                  {"name": "Test Driven Development", "proficiency": 8}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

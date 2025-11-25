@@ -52,7 +52,7 @@ This document provides a comprehensive, phased task list for building the Person
     - [x] Welcome section (`id="welcome-section"`) with h1 element.
     - [x] Projects section (`id="projects"`) with project tiles (`class="project-tile"`).
     - [x] Navbar (`id="navbar"`) with navigation links.
-    - [ ] Profile link (`id="profile-link"`) to GitHub/freeCodeCamp.
+    - [x] Profile link (`id="profile-link"`) to GitHub/freeCodeCamp.
 - [x] Ensure semantic HTML5 structure (header, main, footer).
 - [x] Add placeholder content for all sections.
 
@@ -91,30 +91,30 @@ This document provides a comprehensive, phased task list for building the Person
 
 ### 3.2 Add Professional Links and Contact
 
-- [ ] Include links to GitHub, LinkedIn, freeCodeCamp, HackerRank.
-- [ ] Add email address (consider mailto: link).
-- [ ] Ensure profile-link meets freeCodeCamp requirements.
+- [x] Include links to GitHub, LinkedIn, freeCodeCamp, HackerRank.
+- [x] Add email address (consider mailto: link).
+- [x] Ensure profile-link meets freeCodeCamp requirements.
 
 ### 3.3 Implement Responsive Design
 
-- [ ] Test and refine media queries for mobile/tablet/desktop.
-- [ ] Optimize navbar for mobile (e.g., hamburger menu if needed).
-- [ ] Ensure readability and usability across devices.
+- [x] Test and refine media queries for mobile/tablet/desktop.
+- [x] Optimize navbar for mobile (e.g., hamburger menu if needed).
+- [x] Ensure readability and usability across devices.
 
 ### 3.4 Add About Me Section
 
-- [ ] Create section for personal background and skills.
-- [ ] Highlight software engineering description.
-- [ ] Keep content concise and professional.
+- [x] Create section for personal background and skills.
+- [x] Highlight software engineering description.
+- [x] Keep content concise and professional.
 
 ## Phase 4: Testing and Quality Assurance
 
 ### 4.1 Unit and Integration Testing
 
-- [ ] Test HTML structure against freeCodeCamp test cases.
-- [ ] Verify all required IDs and classes are present.
-- [ ] Check navbar functionality and positioning.
-- [ ] Validate links (internal navigation, external profiles).
+- [x] Test HTML structure against freeCodeCamp test cases.
+- [x] Verify all required IDs and classes are present.
+- [x] Check navbar functionality and positioning.
+- [x] Validate links (internal navigation, external profiles).
 
 ### 4.2 Cross-Browser and Device Testing
 
@@ -124,23 +124,23 @@ This document provides a comprehensive, phased task list for building the Person
 
 ### 4.3 Accessibility and Usability Testing
 
-- [ ] Run accessibility audits (e.g., WAVE, axe).
-- [ ] Test keyboard navigation.
-- [ ] Ensure color contrast meets WCAG guidelines.
+- [x] Run accessibility audits (e.g., WAVE, axe).
+- [x] Test keyboard navigation.
+- [x] Ensure color contrast meets WCAG guidelines.
 
 ### 4.4 Build and Deployment Testing
 
-- [ ] Run build process and verify output.
-- [ ] Test local deployment.
-- [ ] Validate GitHub Pages compatibility.
+- [x] Run build process and verify output.
+- [x] Test local deployment.
+- [x] Validate GitHub Pages compatibility.
 
 ## Phase 5: Deployment and Finalization
 
 ### 5.1 Prepare for Deployment
 
-- [ ] Optimize assets (minify CSS/JS, compress images).
-- [ ] Update build configuration for production.
-- [ ] Ensure all content is finalized and proofread.
+- [x] Optimize assets (minify CSS/JS, compress images).
+- [x] Update build configuration for production.
+- [x] Ensure all content is finalized and proofread.
 
 ### 5.2 Deploy to GitHub Pages
 
@@ -150,15 +150,15 @@ This document provides a comprehensive, phased task list for building the Person
 
 ### 5.3 Documentation and Handover
 
-- [ ] Update README with usage instructions.
-- [ ] Document build and deployment process.
-- [ ] Create maintenance guide for future updates.
+- [x] Update README with usage instructions.
+- [x] Document build and deployment process.
+- [x] Create maintenance guide for future updates.
 
 ### 5.4 Final Review and Iteration
 
-- [ ] Run final freeCodeCamp tests.
-- [ ] Gather feedback and make final adjustments.
-- [ ] Commit final changes and tag release.
+- [x] Run final freeCodeCamp tests.
+- [x] Gather feedback and make final adjustments.
+- [x] Commit final changes and tag release.
 
 ## Phase 6: Portfolio Enhancements and Optimization
 
@@ -190,13 +190,13 @@ This document provides a comprehensive, phased task list for building the Person
 
 ## Phase 7: Improvements
 ### 7.1 UI/UX Enhancements
-- [ ] Add font-awesome icons to social links for better visual appeal
-- [ ] Use font-awesome for consistent iconography across the site
-- [ ] Split stylesheets and JS per component for better maintainability
-- [ ] Implement dark mode toggle for better user experience
-- [ ] Add smooth scrolling for internal navigation links
-- [ ] Improve mobile navigation with a hamburger menu
-- [ ] Add hover effects to project tiles for interactivity
-- [ ] Include a back-to-top button for easier navigation
-- [ ] Use HBS templates for repeated components (navbar, footer)
-- [ ] Setup personal info links to GitHub, LinkedIn, HackerRank, freeCodeCamp
+- [x] Add font-awesome icons to social links for better visual appeal
+- [x] Use font-awesome for consistent iconography across the site
+- [x] Split stylesheets and JS per component for better maintainability
+- [x] Implement dark mode toggle for better user experience
+- [x] Add smooth scrolling for internal navigation links
+- [x] Improve mobile navigation with a hamburger menu
+- [x] Add hover effects to project tiles for interactivity
+- [x] Include a back-to-top button for easier navigation
+- [x] Use HBS templates for repeated components (navbar, footer)
+- [x] Setup personal info links to GitHub, LinkedIn, HackerRank, freeCodeCamp

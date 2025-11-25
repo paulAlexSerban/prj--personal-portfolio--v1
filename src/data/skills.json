@@ -1,0 +1,45 @@
+{
+  "skills": {
+    "categories": [
+      {
+        "name": "Frontend Development",
+        "items": [
+          { "name": "HTML5", "proficiency": 95 },
+          { "name": "CSS3 / SASS", "proficiency": 90 },
+          { "name": "JavaScript (ES6+)", "proficiency": 85 },
+          { "name": "React", "proficiency": 80 },
+          { "name": "Vue.js", "proficiency": 70 },
+          { "name": "Webpack", "proficiency": 75 },
+          { "name": "Responsive Design", "proficiency": 90 }
+        ]
+      },
+      {
+        "name": "Backend Development",
+        "items": [
+          { "name": "Node.js", "proficiency": 70 },
+          { "name": "Express.js", "proficiency": 65 },
+          { "name": "Python", "proficiency": 60 },
+          { "name": "RESTful APIs", "proficiency": 75 }
+        ]
+      },
+      {
+        "name": "Databases",
+        "items": [
+          { "name": "MongoDB", "proficiency": 60 },
+          { "name": "PostgreSQL", "proficiency": 55 },
+          { "name": "MySQL", "proficiency": 50 }
+        ]
+      },
+      {
+        "name": "Tools & Technologies",
+        "items": [
+          { "name": "Git / GitHub", "proficiency": 90 },
+          { "name": "Jira / Confluence", "proficiency": 80 },
+          { "name": "Docker", "proficiency": 50 },
+          { "name": "AWS (S3, EC2)", "proficiency": 40 },
+          { "name": "CI/CD", "proficiency": 60 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "technical_arsenal": {
+    "core_competencies": [
+      {
+        "category_title": "Production Ready",
+        "skills": [
+          {"name": "JavaScript", "level": "expert"},
+          {"name": "TypeScript", "level": "expert"},
+          {"name": "React", "level": "expert"},
+          {"name": "Node.js", "level": "expert"},
+          {"name": "Docker", "level": "expert"},
+          {"name": "Git", "level": "expert"},
+          {"name": "REST APIs", "level": "expert"},
+          {"name": "Linux", "level": "expert"}
+        ]
+      },
+      {
+        "category_title": "Strong & Growing",
+        "skills": [
+          {"name": "AWS", "level": "advanced"},
+          {"name": "PostgreSQL", "level": "advanced"},
+          {"name": "Python", "level": "advanced"},
+          {"name": "GraphQL", "level": "advanced"},
+          {"name": "MongoDB", "level": "advanced"},
+          {"name": "Redis", "level": "advanced"},
+          {"name": "CI/CD", "level": "advanced"},
+          {"name": "Microservices", "level": "advanced"},
+          {"name": "System Design", "level": "advanced"}
+        ]
+      },
+      {
+        "category_title": "Exploring & Learning",
+        "skills": [
+          {"name": "Kubernetes", "level": "learning"},
+          {"name": "Terraform", "level": "learning"},
+          {"name": "Go", "level": "learning"},
+          {"name": "AI Engineering", "level": "learning"},
+          {"name": "Blockchain", "level": "learning"},
+          {"name": "Edge Computing", "level": "learning"}
+        ]
+      }
+    ],
+    "specialized_skills": [
+      {
+        "title": "Frontend Architecture",
+        "skills": [
+          "Front-end Build Infrastructure",
+          "React Hooks",
+          "State Management",
+          "Component Design",
+          "Performance Optimization",
+          "Testing Library"
+        ]
+      },
+      {
+        "title": "Backend Systems",
+        "skills": [
+          "API Design",
+          "Database Optimization",
+          "Authentication",
+          "Caching Strategies",
+          "Message Queues",
+          "Error Handling"
+        ]
+      },
+      {
+        "title": "DevOps & Infrastructure",
+        "skills": [
+          "Cloud Architecture",
+          "Containerization",
+          "Monitoring",
+          "Security",
+          "Automation",
+          "Scaling"
+        ]
+      }
+    ],
+    "methodologies": [
+      {
+        "title": "Agile & Scrum",
+        "description": "Daily standups, sprints, retrospectives"
+      },
+      {
+        "title": "Test-Driven Development",
+        "description": "Jest, Cypress, unit, integration & e2e testing"
+      },
+      {
+        "title": "CI/CD",
+        "description": "GitHub Actions, automated deployments"
+      },
+      {
+        "title": "Code Reviews",
+        "description": "Pull request best practices, constructive feedback"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Allow up to 10 open pull requests for dependency updates
+    open-pull-requests-limit: 10
+    # Add labels to pull requests for better organization
+    labels:
+      - "dependencies"
+      - "npm"
+    # Group minor updates together
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

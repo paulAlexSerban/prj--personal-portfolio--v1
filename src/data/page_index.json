@@ -12,5 +12,14 @@
       { "name": "experience", "href": "#experience" },
       { "name": "contact", "href": "#contact" }
     ]
+  },
+  "hero": {
+    "title": "Hello, I'm Paul Serban",
+    "subtitle": "Front-end Software Engineer",
+    "description": [
+      "Building scalable solutions with clean, maintainable code",
+      "Passionate about front-end engineering and user experience",
+      "3+ years crafting digital experiences"
+    ]
   }
 }
