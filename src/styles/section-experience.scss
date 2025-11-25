@@ -6,7 +6,7 @@
   &::before {
     content: "";
     position: absolute;
-    left: 30px;
+    left: 105px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -29,8 +29,9 @@
   font-family: "JetBrains Mono", monospace;
   font-size: 0.9rem;
   color: var(--accent-color);
-  padding-right: 2rem;
+  padding-right: 32px;
   text-align: right;
+  padding-top: 20px;
 
   @media (max-width: 768px) {
     min-width: 80px;
