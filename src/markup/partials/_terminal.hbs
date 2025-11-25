@@ -14,10 +14,10 @@
         <span class="command">cat about_me.txt</span>
       </div>
       <div class="terminal__output">
-        <h1 class="typing-text">{{welcome.title}}</h1>
-        <p class="typing-text delay-1">{{welcome.subtitle}}</p>
+        <h1 class="typing-text">{{page.hero.title}}</h1>
+        <p class="typing-text delay-1">{{page.hero.subtitle}}</p>
         <div class="typing-text delay-2">
-          {{#each welcome.description}}
+          {{#each page.hero.description}}
             <p>> {{this}}</p>
           {{/each}}
         </div>
