@@ -49,15 +49,15 @@ This document provides a comprehensive, phased task list for building the Person
 ### 2.1 Implement HTML Structure
 
 - [x] Create main HTML template with required sections:
-  - Welcome section (`id="welcome-section"`) with h1 element.
-  - Projects section (`id="projects"`) with project tiles (`class="project-tile"`).
-  - Navbar (`id="navbar"`) with navigation links.
-  - Profile link (`id="profile-link"`) to GitHub/freeCodeCamp.
+    - [x] Welcome section (`id="welcome-section"`) with h1 element.
+    - [x] Projects section (`id="projects"`) with project tiles (`class="project-tile"`).
+    - [x] Navbar (`id="navbar"`) with navigation links.
+    - [ ] Profile link (`id="profile-link"`) to GitHub/freeCodeCamp.
 - [x] Ensure semantic HTML5 structure (header, main, footer).
 - [x] Add placeholder content for all sections.
 
 ### 2.2 Implement CSS Styling
-
+ 
 - [x] Create styles.css linked to HTML.
 - [x] Style welcome section to full viewport height.
 - [x] Implement fixed navbar at top of viewport.
@@ -199,3 +199,4 @@ This document provides a comprehensive, phased task list for building the Person
 - [ ] Add hover effects to project tiles for interactivity
 - [ ] Include a back-to-top button for easier navigation
 - [ ] Use HBS templates for repeated components (navbar, footer)
+- [ ] Setup personal info links to GitHub, LinkedIn, HackerRank, freeCodeCamp

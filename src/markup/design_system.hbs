@@ -3,7 +3,7 @@
     {{> partials/_section-navbar page=page_design_system}}
 
 <!-- Hero Section -->
-{{!-- <section id="welcome-section" style="height: 60vh;">
+<section id="welcome-section" style="height: 60vh;">
     <div class="welcome-content">
         <h1>Design System</h1>
         <p>A comprehensive guide to the visual language and UI components</p>
@@ -12,10 +12,10 @@
             <a href="#typography" class="btn btn-outline">View Source</a>
         </div>
     </div>
-</section> --}}
+</section>
 
 <!-- Colors Section -->
-{{!-- <section id="colors" class="section-padding">
+<section id="colors" class="section-padding">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">// color_palette</h2>
@@ -71,10 +71,10 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 
 <!-- Typography Section -->
-{{!-- <section id="typography" class="section-padding" style="background: var(--secondary-bg);">
+<section id="typography" class="section-padding" style="background: var(--secondary-bg);">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">// typography</h2>
@@ -123,10 +123,10 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 
 <!-- Components Section -->
-{{!-- <section id="components" class="section-padding">
+<section id="components" class="section-padding">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">// ui_components</h2>
@@ -258,10 +258,10 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 
 <!-- Patterns Section -->
-{{!-- <section id="patterns" class="section-padding" style="background: var(--secondary-bg);">
+<section id="patterns" class="section-padding" style="background: var(--secondary-bg);">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">// ui_patterns</h2>
@@ -361,10 +361,13 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
+
+<!-- Skills Section -->
+{{> partials/_section-skills}}
 
 <!-- Usage Guidelines -->
-{{!-- <section class="section-padding">
+<section class="section-padding">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">// usage_guidelines</h2>
@@ -390,9 +393,11 @@
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 
-{{!-- <footer class="glass-footer">
+{{> partials/_section-competency-matrix}}
+
+<footer class="glass-footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -406,5 +411,5 @@
             </div>
         </div>
     </div>
-</footer> --}}
+</footer>
 {{/ partials/_template_base}}

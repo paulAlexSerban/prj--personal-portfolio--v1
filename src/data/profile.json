@@ -3,7 +3,7 @@
   "title": "Front-end Software Engineer",
   "aboutMe": {
     "title": "Engineering with Purpose",
-    "description": "I specialize in building robust, scalable software systems that solve real-world problems. My approach combines technical excellence with business understanding to deliver impactful solutions."
+    "description": "I specialize in building robust, scalable front-end solutions that deliver exceptional user experiences. My approach combines technical excellence with business understanding to deliver impactful solutions."
   },
   "skills": [
     "Responsive Web Design",
@@ -14,8 +14,7 @@
     "GraphQL"
   ],
   "stats": [
-    { "label": "Projects Completed", "value": 50 },
-    { "label": "Years Experience", "value": 5 },
+    { "label": "Years Experience", "value": 3 },
     { "label": "Technologies", "value": 25 }
   ]
 }

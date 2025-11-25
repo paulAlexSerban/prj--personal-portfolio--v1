@@ -1,27 +1,32 @@
 [
   {
     "title": "Personal Portfolio",
-    "description": "A simple, static personal portfolio website to showcase projects, coursework, and software engineering skills.",
+    "description": "A simple, static personal portfolio website to showcase projects, coursework, and front-end software engineering skills.",
     "link": "https://github.com/paulAlexSerban/prj--personal-portfolio--v1"
   },
   {
-    "title": "Sample Project",
-    "description": "This is a sample project description.",
-    "link": "https://github.com/paulAlexSerban/sample-project"
+    "title": "React.js Playground (Workbook)",
+    "description": "This is a workbook project where I experiment with various React.js concepts and features.",
+    "link": "https://github.com/paulAlexSerban/react-playground-workbook"
   },
   {
-    "title": "Portfolio Website",
-    "description": "A personal portfolio website built with HTML, CSS, and JavaScript.",
-    "link": "https://github.com/paulAlexSerban/portfolio-website"
+    "title": "Front-end Playground (Workbook)",
+    "description": "A workbook project to explore and practice front-end development techniques and technologies.",
+    "link": "https://github.com/paulAlexSerban/front-end-playground-workbook"
   },
   {
-    "title": "Weather App",
-    "description": "A weather application that fetches real-time weather data using an API.",
-    "link": "https://github.com/paulAlexSerban/weather-app"
+    "title": "OpenClassRooms - Web Developer Certification Projects (Workbook)",
+    "description": "A collection of projects completed as part of the OpenClassRooms Web Developer certification.",
+    "link": "https://github.com/paulAlexSerban/openclassrooms-web-developer-certification-projects"
   },
   {
-    "title": "Task Manager",
-    "description": "A simple task management app with CRUD functionality.",
-    "link": "https://github.com/paulAlexSerban/task-manager"
+    "title": "FreeCodeCamp - RWD & FE Libraries Certification Projects (Workbook)",
+    "description": "A collection of projects completed as part of the FreeCodeCamp Responsive Web Design and Front End Development Libraries certification.",
+    "link": "https://github.com/paulAlexSerban/freecodecamp-front-end-development-libraries-certification-projects"
+  },
+  {
+    "title": "FreeCodeCamp - Data Structures and Algorithms Certification Projects (Workbook)",
+    "description": "A collection of projects completed as part of the FreeCodeCamp Data Structures and Algorithms certification.",
+    "link": "https://github.com/paulAlexSerban/freecodecamp-data-structures-algorithms-certification-projects"
   }
 ]

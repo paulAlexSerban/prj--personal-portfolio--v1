@@ -2,6 +2,46 @@
 <html lang="en">
 
 <head>
+    <script charset="UTF-8">
+        window.addEventListener('load', () => {
+            const performanceEntries = performance.getEntriesByType('navigation');
+            const navigationTiming = performanceEntries[0];
+
+            const htmlLoadTime = navigationTiming.responseEnd - navigationTiming.startTime;
+            console.log(`HTML Loading Time: ${htmlLoadTime}ms`);
+
+            const totalCSSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'link')
+                .reduce((total, css) => total + css.transferSize, 0);
+            console.log(`Total CSS Size: ${totalCSSSize / 1024} kbytes`);
+
+            const totalJSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'script')
+                .reduce((total, js) => total + js.transferSize, 0);
+            console.log(`Total JS Size: ${totalJSSize / 1024} kbytes`);
+
+            const cssEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'link');
+            const jsEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'script');
+
+            const details = [
+                { Type: 'HTML', 'Load Time (ms)': htmlLoadTime, 'Size (kB)': 'N/A' },
+                ...cssEntries.map(css => ({
+                    Type: 'CSS',
+                    'File': css.name,
+                    'Load Time (ms)': css.responseEnd - css.startTime,
+                    'Size (kB)': (css.transferSize / 1024).toFixed(2)
+                })),
+                ...jsEntries.map(js => ({
+                    Type: 'JS',
+                    'File': js.name,
+                    'Load Time (ms)': js.responseEnd - js.startTime,
+                    'Size (kB)': (js.transferSize / 1024).toFixed(2)
+                }))
+            ];
+
+            console.table(details);
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{page.title}}</title>
@@ -14,7 +54,7 @@
 <body>
 
     {{> @partial-block}}
-    
+
     <script src="main.js"></script>
 </body>
 

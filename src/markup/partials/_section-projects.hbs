@@ -1,5 +1,5 @@
 <section id="projects" class="section-padding">
-    <link rel="stylesheet" href="section-projects.css" />
+  <link rel="stylesheet" href="section-projects.css" />
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">// featured_projects</h2>
@@ -7,12 +7,27 @@
     </div>
     <div class="projects-grid">
       {{#each projects}}
-        <div class="project-item">
-          <h3>{{this.title}}</h3>
-          <p>{{this.description}}</p>
-          <a href="{{this.link}}" target="_blank">View Project</a>
+      <div class="project-card">
+        <div class="project-header">
+          <h3 class="project-title">{{this.title}}</h3>
+          <p class="project-description">{{this.description}}</p>
+          <div class="project-tech">
+            {{#each this.technologies}}
+            <span class="tech-tag">{{this}}</span>
+            {{/each}}
+          </div>
         </div>
+        <div class="project-links">
+          <a href="{{this.link}}" class="project-link" target="_blank">
+            <span>Live Demo</span>
+          </a>
+          <a href="{{this.codeLink}}" class="project-link" target="_blank">
+            <span>View Code</span>
+          </a>
+        </div>
+      </div>
       {{/each}}
     </div>
+  </div>
   </div>
 </section>

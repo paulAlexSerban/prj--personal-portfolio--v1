@@ -1,190 +1,239 @@
-
-import "../styles/cmp-brand.scss";
 import "../styles/styles.scss";
 
 (() => {
   // script.js
-  // document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     // Animate skill bars on scroll
-    // const animateSkillBars = () => {
-    //   const skillItems = document.querySelectorAll(".skill-item");
-    //   skillItems.forEach((item) => {
-    //     const level = item.getAttribute("data-level");
-    //     const progressBar = item.querySelector(".skill-progress");
+    const animateSkillBars = () => {
+      const skillItems = document.querySelectorAll(".skill-item");
+      skillItems.forEach((item) => {
+        const level = item.getAttribute("data-level");
+        const progressBar = item.querySelector(".skill-progress");
 
-    //     const observer = new IntersectionObserver(
-    //       (entries) => {
-    //         entries.forEach((entry) => {
-    //           if (entry.isIntersecting) {
-    //             progressBar.style.width = `${level}%`;
-    //             observer.unobserve(entry.target);
-    //           }
-    //         });
-    //       },
-    //       { threshold: 0.5 }
-    //     );
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (progressBar && entry.isIntersecting) {
+                progressBar.style.width = `${level}%`;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
 
-    //     observer.observe(item);
-    //   });
-    // };
+        observer.observe(item);
+      });
+    };
+    const animateStats = () => {
+      const statNumbers = document.querySelectorAll(".stat-number");
 
-    // Animate stats counter
-    // const animateStats = () => {
-    //   const statNumbers = document.querySelectorAll(".stat-number");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = entry.target;
+              const count = parseInt(target.getAttribute("data-count"));
+              const duration = 2000; // 2 seconds
+              const step = count / (duration / 16); // 60fps
+              let current = 0;
 
-    //   const observer = new IntersectionObserver(
-    //     (entries) => {
-    //       entries.forEach((entry) => {
-    //         if (entry.isIntersecting) {
-    //           const target = entry.target;
-    //           const count = parseInt(target.getAttribute("data-count"));
-    //           const duration = 2000; // 2 seconds
-    //           const step = count / (duration / 16); // 60fps
-    //           let current = 0;
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= count) {
+                  current = count;
+                  clearInterval(timer);
+                }
+                target.textContent = Math.floor(current);
+              }, 16);
 
-    //           const timer = setInterval(() => {
-    //             current += step;
-    //             if (current >= count) {
-    //               current = count;
-    //               clearInterval(timer);
-    //             }
-    //             target.textContent = Math.floor(current);
-    //           }, 16);
+              observer.unobserve(target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
 
-    //           observer.unobserve(target);
-    //         }
-    //       });
-    //     },
-    //     { threshold: 0.5 }
-    //   );
+      statNumbers.forEach((stat) => observer.observe(stat));
+    };
+    animateSkillBars();
+    animateStats();
 
-    //   statNumbers.forEach((stat) => observer.observe(stat));
-    // };
+    const decodeOnHover = () => {
+      const encodedEmails = document.querySelectorAll(".encoded-email");
+      encodedEmails.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+          const encodedHref = element.getAttribute("href");
+          try {
+            const decodedHref = atob(encodedHref);
+            element.setAttribute("href", decodedHref);
+          } catch (e) {
+            console.error("Failed to decode email:", e);
+          }
+        });
 
-    // Load projects
-    // const loadProjects = () => {
-    //   const projects = [
-    //     {
-    //       title: "Distributed Task Queue",
-    //       description:
-    //         "A scalable task queue system built with Node.js and Redis, handling millions of jobs daily.",
-    //       technologies: ["Node.js", "Redis", "Docker", "AWS"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //     {
-    //       title: "Real-time Analytics Dashboard",
-    //       description:
-    //         "Interactive dashboard for monitoring application performance with real-time data visualization.",
-    //       technologies: ["React", "TypeScript", "WebSocket", "D3.js"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //     {
-    //       title: "Microservices Architecture",
-    //       description:
-    //         "Cloud-native application with 10+ microservices, CI/CD pipeline, and automated scaling.",
-    //       technologies: ["Kubernetes", "Docker", "AWS", "Terraform"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //     {
-    //       title: "Machine Learning API",
-    //       description:
-    //         "RESTful API for serving ML models with automatic model versioning and A/B testing.",
-    //       technologies: ["Python", "FastAPI", "MLflow", "Docker"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //     {
-    //       title: "Blockchain Explorer",
-    //       description:
-    //         "Web application for exploring blockchain transactions and smart contract interactions.",
-    //       technologies: ["Vue.js", "Web3.js", "Ethereum", "GraphQL"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //     {
-    //       title: "DevOps Automation Platform",
-    //       description:
-    //         "Platform for automating deployment pipelines, monitoring, and infrastructure management.",
-    //       technologies: ["Go", "Kubernetes", "Prometheus", "Grafana"],
-    //       demoLink: "#",
-    //       codeLink: "#",
-    //     },
-    //   ];
+        element.addEventListener("mouseout", () => {
+          const decodedHref = element.getAttribute("href");
+          try {
+            const encodedHref = btoa(decodedHref);
+            element.setAttribute("href", encodedHref);
+          } catch (e) {
+            console.error("Failed to encode email:", e);
+          }
+        });
 
-    //   const projectsGrid = document.querySelector(".projects-grid");
+        element.addEventListener("focus", (e) => {
+          const encodedHref = element.getAttribute("href");
+          try {
+            const decodedHref = atob(encodedHref);
+            element.setAttribute("href", decodedHref);
+          } catch (e) {
+            console.error("Failed to decode email:", e);
+          }
+        });
 
-    //   projects.forEach((project) => {
-    //     const projectCard = document.createElement("div");
-    //     projectCard.className = "project-card";
+        element.addEventListener("blur", (e) => {
+          const decodedHref = element.getAttribute("href");
+          try {
+            const encodedHref = btoa(decodedHref);
+            element.setAttribute("href", encodedHref);
+          } catch (e) {
+            console.error("Failed to encode email:", e);
+          }
+        });
+      });
+    };
+    decodeOnHover();
 
-    //     projectCard.innerHTML = `
-    //             <div class="project-header">
-    //                 <h3 class="project-title">${project.title}</h3>
-    //                 <p class="project-description">${project.description}</p>
-    //                 <div class="project-tech">
-    //                     ${project.technologies
-    //                       .map(
-    //                         (tech) => `<span class="tech-tag">${tech}</span>`
-    //                       )
-    //                       .join("")}
-    //                 </div>
-    //             </div>
-    //             <div class="project-links">
-    //                 <a href="${
-    //                   project.demoLink
-    //                 }" class="project-link" target="_blank">
-    //                     <span>Live Demo</span>
-    //                 </a>
-    //                 <a href="${
-    //                   project.codeLink
-    //                 }" class="project-link" target="_blank">
-    //                     <span>View Code</span>
-    //                 </a>
-    //             </div>
-    //         `;
 
-    //     projectsGrid.appendChild(projectCard);
-    //   });
-    // };
+  });
 
-    // Initialize animations and content
-    // animateSkillBars();
-    // animateStats();
-    // loadProjects();
+  // Animate stats counter
 
-    // Mobile menu functionality
-    // const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-    // const navLinks = document.querySelector(".nav-links");
+  // Load projects
+  // const loadProjects = () => {
+  //   const projects = [
+  //     {
+  //       title: "Distributed Task Queue",
+  //       description:
+  //         "A scalable task queue system built with Node.js and Redis, handling millions of jobs daily.",
+  //       technologies: ["Node.js", "Redis", "Docker", "AWS"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //     {
+  //       title: "Real-time Analytics Dashboard",
+  //       description:
+  //         "Interactive dashboard for monitoring application performance with real-time data visualization.",
+  //       technologies: ["React", "TypeScript", "WebSocket", "D3.js"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //     {
+  //       title: "Microservices Architecture",
+  //       description:
+  //         "Cloud-native application with 10+ microservices, CI/CD pipeline, and automated scaling.",
+  //       technologies: ["Kubernetes", "Docker", "AWS", "Terraform"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //     {
+  //       title: "Machine Learning API",
+  //       description:
+  //         "RESTful API for serving ML models with automatic model versioning and A/B testing.",
+  //       technologies: ["Python", "FastAPI", "MLflow", "Docker"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //     {
+  //       title: "Blockchain Explorer",
+  //       description:
+  //         "Web application for exploring blockchain transactions and smart contract interactions.",
+  //       technologies: ["Vue.js", "Web3.js", "Ethereum", "GraphQL"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //     {
+  //       title: "DevOps Automation Platform",
+  //       description:
+  //         "Platform for automating deployment pipelines, monitoring, and infrastructure management.",
+  //       technologies: ["Go", "Kubernetes", "Prometheus", "Grafana"],
+  //       demoLink: "#",
+  //       codeLink: "#",
+  //     },
+  //   ];
 
-    // mobileMenuBtn.addEventListener("click", function () {
-    //   this.classList.toggle("active");
-    //   navLinks.classList.toggle("active");
-    // });
+  //   const projectsGrid = document.querySelector(".projects-grid");
 
-    // Close mobile menu when clicking on a link
-    // document.querySelectorAll(".nav-link").forEach((link) => {
-    //   link.addEventListener("click", () => {
-    //     mobileMenuBtn.classList.remove("active");
-    //     navLinks.classList.remove("active");
-    //   });
-    // });
+  //   projects.forEach((project) => {
+  //     const projectCard = document.createElement("div");
+  //     projectCard.className = "project-card";
 
-    // Navbar background on scroll
-    // window.addEventListener("scroll", function () {
-    //   const navbar = document.getElementById("navbar");
-    //   if (window.scrollY > 50) {
-    //     navbar.style.background = "var(--glass-bg)";
-    //     navbar.style.backdropFilter = "blur(10px)";
-    //   } else {
-    //     navbar.style.background = "transparent";
-    //     navbar.style.backdropFilter = "none";
-    //   }
-    // });
+  //     projectCard.innerHTML = `
+  //             <div class="project-header">
+  //                 <h3 class="project-title">${project.title}</h3>
+  //                 <p class="project-description">${project.description}</p>
+  //                 <div class="project-tech">
+  //                     ${project.technologies
+  //                       .map(
+  //                         (tech) => `<span class="tech-tag">${tech}</span>`
+  //                       )
+  //                       .join("")}
+  //                 </div>
+  //             </div>
+  //             <div class="project-links">
+  //                 <a href="${
+  //                   project.demoLink
+  //                 }" class="project-link" target="_blank">
+  //                     <span>Live Demo</span>
+  //                 </a>
+  //                 <a href="${
+  //                   project.codeLink
+  //                 }" class="project-link" target="_blank">
+  //                     <span>View Code</span>
+  //                 </a>
+  //             </div>
+  //         `;
 
-    // Smooth scrolling for anchor links
+  //     projectsGrid.appendChild(projectCard);
+  //   });
+  // };
+
+  // Initialize animations and content
+
+  // animateStats();
+  // loadProjects();
+
+  // Mobile menu functionality
+  // const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  // const navLinks = document.querySelector(".nav-links");
+
+  // mobileMenuBtn.addEventListener("click", function () {
+  //   this.classList.toggle("active");
+  //   navLinks.classList.toggle("active");
+  // });
+
+  // Close mobile menu when clicking on a link
+  // document.querySelectorAll(".nav-link").forEach((link) => {
+  //   link.addEventListener("click", () => {
+  //     mobileMenuBtn.classList.remove("active");
+  //     navLinks.classList.remove("active");
+  //   });
+  // });
+
+  // Navbar background on scroll
+  // window.addEventListener("scroll", function () {
+  //   const navbar = document.getElementById("navbar");
+  //   if (window.scrollY > 50) {
+  //     navbar.style.background = "var(--glass-bg)";
+  //     navbar.style.backdropFilter = "blur(10px)";
+  //   } else {
+  //     navbar.style.background = "transparent";
+  //     navbar.style.backdropFilter = "none";
+  //   }
+  // });
+
+  // Smooth scrolling for anchor links
   //   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   //     anchor.addEventListener("click", function (e) {
   //       e.preventDefault();
@@ -362,95 +411,95 @@ import "../styles/styles.scss";
 
   // Design System Interactions
 
-    // Theme Toggle
-    // const themeToggle = document.getElementById("themeToggle");
-    // const themeIcon = themeToggle.querySelector(".theme-icon");
+  // Theme Toggle
+  // const themeToggle = document.getElementById("themeToggle");
+  // const themeIcon = themeToggle.querySelector(".theme-icon");
 
-    // themeToggle.addEventListener("click", function () {
-    //   const currentTheme = document.documentElement.getAttribute("data-theme");
-    //   if (currentTheme === "light") {
-    //     document.documentElement.removeAttribute("data-theme");
-    //     themeIcon.textContent = "🌙";
-    //     localStorage.setItem("theme", "dark");
-    //   } else {
-    //     document.documentElement.setAttribute("data-theme", "light");
-    //     themeIcon.textContent = "☀️";
-    //     localStorage.setItem("theme", "light");
-    //   }
-    // });
+  // themeToggle.addEventListener("click", function () {
+  //   const currentTheme = document.documentElement.getAttribute("data-theme");
+  //   if (currentTheme === "light") {
+  //     document.documentElement.removeAttribute("data-theme");
+  //     themeIcon.textContent = "🌙";
+  //     localStorage.setItem("theme", "dark");
+  //   } else {
+  //     document.documentElement.setAttribute("data-theme", "light");
+  //     themeIcon.textContent = "☀️";
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // });
 
-    // Check for saved theme preference
-    // const savedTheme = localStorage.getItem("theme");
-    // if (savedTheme === "light") {
-    //   document.documentElement.setAttribute("data-theme", "light");
-    //   themeIcon.textContent = "☀️";
-    // }
+  // Check for saved theme preference
+  // const savedTheme = localStorage.getItem("theme");
+  // if (savedTheme === "light") {
+  //   document.documentElement.setAttribute("data-theme", "light");
+  //   themeIcon.textContent = "☀️";
+  // }
 
-    // Smooth scrolling for navigation
-    // document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    //   anchor.addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute("href"));
-    //     if (target) {
-    //       target.scrollIntoView({
-    //         behavior: "smooth",
-    //         block: "start",
-    //       });
-    //     }
-    //   });
-    // });
+  // Smooth scrolling for navigation
+  // document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  //   anchor.addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     const target = document.querySelector(this.getAttribute("href"));
+  //     if (target) {
+  //       target.scrollIntoView({
+  //         behavior: "smooth",
+  //         block: "start",
+  //       });
+  //     }
+  //   });
+  // });
 
-    // Interactive form elements
-    // const formInputs = document.querySelectorAll("input, select");
-    // formInputs.forEach((input) => {
-    //   input.addEventListener("focus", function () {
-    //     this.parentElement.classList.add("focused");
-    //   });
+  // Interactive form elements
+  // const formInputs = document.querySelectorAll("input, select");
+  // formInputs.forEach((input) => {
+  //   input.addEventListener("focus", function () {
+  //     this.parentElement.classList.add("focused");
+  //   });
 
-    //   input.addEventListener("blur", function () {
-    //     this.parentElement.classList.remove("focused");
-    //   });
-    // });
+  //   input.addEventListener("blur", function () {
+  //     this.parentElement.classList.remove("focused");
+  //   });
+  // });
 
-    // Component copy functionality
-    // const copyButtons = document.querySelectorAll(".btn");
-    // copyButtons.forEach((button) => {
-    //   button.addEventListener("click", function (e) {
-    //     if (this.textContent.includes("View Source")) {
-    //       e.preventDefault();
-    //       // In a real implementation, this would copy component code
-    //       const originalText = this.textContent;
-    //       this.textContent = "Source Code Copied!";
-    //       setTimeout(() => {
-    //         this.textContent = originalText;
-    //       }, 2000);
-    //     }
-    //   });
-    // });
+  // Component copy functionality
+  // const copyButtons = document.querySelectorAll(".btn");
+  // copyButtons.forEach((button) => {
+  //   button.addEventListener("click", function (e) {
+  //     if (this.textContent.includes("View Source")) {
+  //       e.preventDefault();
+  //       // In a real implementation, this would copy component code
+  //       const originalText = this.textContent;
+  //       this.textContent = "Source Code Copied!";
+  //       setTimeout(() => {
+  //         this.textContent = originalText;
+  //       }, 2000);
+  //     }
+  //   });
+  // });
 
-    // Matrix tab functionality for showcase
-    // const matrixTabs = document.querySelectorAll(".matrix-tab");
-    // matrixTabs.forEach((tab) => {
-    //   tab.addEventListener("click", function () {
-    //     matrixTabs.forEach((t) => t.classList.remove("active"));
-    //     this.classList.add("active");
-    //   });
-    // });
+  // Matrix tab functionality for showcase
+  // const matrixTabs = document.querySelectorAll(".matrix-tab");
+  // matrixTabs.forEach((tab) => {
+  //   tab.addEventListener("click", function () {
+  //     matrixTabs.forEach((t) => t.classList.remove("active"));
+  //     this.classList.add("active");
+  //   });
+  // });
 
-    // Animate proficiency bars in competency matrix pattern
-    // const subjectItems = document.querySelectorAll(".subject-item");
-    // subjectItems.forEach((item) => {
-    //   const proficiency = parseInt(item.getAttribute("data-proficiency"));
-    //   const proficiencyBar = item.querySelector(".subject-proficiency");
+  // Animate proficiency bars in competency matrix pattern
+  // const subjectItems = document.querySelectorAll(".subject-item");
+  // subjectItems.forEach((item) => {
+  //   const proficiency = parseInt(item.getAttribute("data-proficiency"));
+  //   const proficiencyBar = item.querySelector(".subject-proficiency");
 
-    //   if (proficiencyBar) {
-    //     setTimeout(() => {
-    //       proficiencyBar.style.width = `${(proficiency / 10) * 100}%`;
-    //     }, 500);
-    //   }
-    // });
+  //   if (proficiencyBar) {
+  //     setTimeout(() => {
+  //       proficiencyBar.style.width = `${(proficiency / 10) * 100}%`;
+  //     }, 500);
+  //   }
+  // });
 
-    // Add keyboard navigation
+  // Add keyboard navigation
   //   document.addEventListener("keydown", function (e) {
   //     if (e.key === "Tab") {
   //       // Add focus styles for accessibility

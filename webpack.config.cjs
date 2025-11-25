@@ -88,6 +88,7 @@ module.exports = {
       data: getJsonData(DATA_DIR),
       helpers: {
         json: (context) => JSON.stringify(context),
+		encode: (context) => btoa(context)
       },
       partials: [path.join(__dirname, "src/markup/partials", "*.hbs")],
     }),
