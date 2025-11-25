@@ -56,8 +56,3 @@ The project follows a component-based architecture.
 - **Styling:** Uses SASS with a clear separation of concerns, supporting light and dark modes via CSS variables.
 - **Templating:** Handlebars is used for templating, with data sourced from JSON files, ensuring a clean separation of data and presentation.
 - **JavaScript:** Modern JavaScript (ES6+) is used, organized into modules and bundled with Webpack.
-
-For a more detailed overview of the project's architecture and conventions, please refer to [GEMINI.md](GEMINI.md).
-
-## License
-This project is licensed under the MIT License.
