@@ -2,37 +2,43 @@
   {
     "title": "Personal Portfolio",
     "description": "A simple, static personal portfolio website to showcase projects, coursework, and front-end software engineering skills.",
-    "link": "https://github.com/paulAlexSerban/prj--personal-portfolio--v1",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/prj--personal-portfolio--v1",
     "category": ["Frontend", "Fullstack"]
   },
   {
     "title": "React.js Playground (Workbook)",
     "description": "This is a workbook project where I experiment with various React.js concepts and features.",
-    "link": "https://github.com/paulAlexSerban/react-playground-workbook",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/react-playground-workbook",
     "category": ["Frontend"]
   },
   {
     "title": "Front-end Playground (Workbook)",
     "description": "A workbook project to explore and practice front-end development techniques and technologies.",
-    "link": "https://github.com/paulAlexSerban/front-end-playground-workbook",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/front-end-playground-workbook",
     "category": ["Frontend", "Tooling"]
   },
   {
     "title": "OpenClassRooms - Web Developer Certification Projects (Workbook)",
     "description": "A collection of projects completed as part of the OpenClassRooms Web Developer certification.",
-    "link": "https://github.com/paulAlexSerban/openclassrooms-web-developer-certification-projects",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/openclassrooms-web-developer-certification-projects",
     "category": ["Certifications", "Frontend"]
   },
   {
     "title": "FreeCodeCamp - RWD & FE Libraries Certification Projects (Workbook)",
     "description": "A collection of projects completed as part of the FreeCodeCamp Responsive Web Design and Front End Development Libraries certification.",
-    "link": "https://github.com/paulAlexSerban/freecodecamp-front-end-development-libraries-certification-projects",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/freecodecamp-front-end-development-libraries-certification-projects",
     "category": ["Certifications", "Frontend"]
   },
   {
     "title": "FreeCodeCamp - Data Structures and Algorithms Certification Projects (Workbook)",
     "description": "A collection of projects completed as part of the FreeCodeCamp Data Structures and Algorithms certification.",
-    "link": "https://github.com/paulAlexSerban/wbk--fcc-dsa",
+    "demo": "",
+    "code": "https://github.com/paulAlexSerban/wbk--fcc-dsa",
     "category": ["Certifications", "Algorithms"]
   }
 ]

@@ -3,6 +3,9 @@
 ## Overview
 This is a simple, static personal portfolio website to showcase projects, coursework, and software engineering skills. It is built with HTML, CSS (SASS), JavaScript, Webpack, and Handlebars, and is hosted on GitHub Pages.
 
+## Live Demo
+You can view the live version of the portfolio [here](https://paulalexserban.github.io/prj--personal-portfolio--v1/).
+
 ## Features
 - Dynamic navigation bar with active link highlighting and mobile menu toggle
 - Light/Dark mode toggle
