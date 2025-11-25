@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .color-group h3 {
@@ -25,6 +29,11 @@
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+        flex-direction: column;
+    text-align: center;
+  }
 }
 
 .color-swatch {

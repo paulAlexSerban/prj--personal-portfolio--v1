@@ -1,0 +1,34 @@
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guideline-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.guideline-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.guideline-card h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.guideline-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
