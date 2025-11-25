@@ -2,6 +2,46 @@
 <html lang="en">
 
 <head>
+    <script charset="UTF-8">
+        window.addEventListener('load', () => {
+            const performanceEntries = performance.getEntriesByType('navigation');
+            const navigationTiming = performanceEntries[0];
+
+            const htmlLoadTime = navigationTiming.responseEnd - navigationTiming.startTime;
+            console.log(`HTML Loading Time: ${htmlLoadTime}ms`);
+
+            const totalCSSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'link')
+                .reduce((total, css) => total + css.transferSize, 0);
+            console.log(`Total CSS Size: ${totalCSSSize / 1024} kbytes`);
+
+            const totalJSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'script')
+                .reduce((total, js) => total + js.transferSize, 0);
+            console.log(`Total JS Size: ${totalJSSize / 1024} kbytes`);
+
+            const cssEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'link');
+            const jsEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'script');
+
+            const details = [
+                { Type: 'HTML', 'Load Time (ms)': htmlLoadTime, 'Size (kB)': 'N/A' },
+                ...cssEntries.map(css => ({
+                    Type: 'CSS',
+                    'File': css.name,
+                    'Load Time (ms)': css.responseEnd - css.startTime,
+                    'Size (kB)': (css.transferSize / 1024).toFixed(2)
+                })),
+                ...jsEntries.map(js => ({
+                    Type: 'JS',
+                    'File': js.name,
+                    'Load Time (ms)': js.responseEnd - js.startTime,
+                    'Size (kB)': (js.transferSize / 1024).toFixed(2)
+                }))
+            ];
+
+            console.table(details);
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Serban Portfolio | Design System Documentation</title>
@@ -47,18 +87,763 @@
         	<script src="section-navbar.js"></script>
         </nav>
     <!-- Hero Section -->
+    <section id="welcome-section" style="height: 60vh;">
+        <div class="welcome-content">
+            <h1>Design System</h1>
+            <p>A comprehensive guide to the visual language and UI components</p>
+            <div class="welcome-buttons">
+                <a href="#colors" class="btn">Explore Components</a>
+                <a href="#typography" class="btn btn-outline">View Source</a>
+            </div>
+        </div>
+    </section>
     
     <!-- Colors Section -->
+    <section id="colors" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// color_palette</h2>
+                <div class="section-line"></div>
+            </div>
+    
+            <div class="colors-grid">
+                <div class="color-group">
+                    <h3>Primary Colors</h3>
+                    <div class="color-items">
+                        <div class="color-item" style="--color: var(--primary-bg)">
+                            <div class="color-swatch"></div>
+                            <div class="color-info">
+                                <span class="color-name">Primary BG</span>
+                                <span class="color-value">#0a0a0f</span>
+                            </div>
+                        </div>
+                        <div class="color-item" style="--color: var(--secondary-bg)">
+                            <div class="color-swatch"></div>
+                            <div class="color-info">
+                                <span class="color-name">Secondary BG</span>
+                                <span class="color-value">#15151f</span>
+                            </div>
+                        </div>
+                        <div class="color-item" style="--color: var(--accent-color)">
+                            <div class="color-swatch"></div>
+                            <div class="color-info">
+                                <span class="color-name">Accent</span>
+                                <span class="color-value">#64ffda</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="color-group">
+                    <h3>Text Colors</h3>
+                    <div class="color-items">
+                        <div class="color-item" style="--color: var(--text-primary)">
+                            <div class="color-swatch"></div>
+                            <div class="color-info">
+                                <span class="color-name">Text Primary</span>
+                                <span class="color-value">#e6f1ff</span>
+                            </div>
+                        </div>
+                        <div class="color-item" style="--color: var(--text-secondary)">
+                            <div class="color-swatch"></div>
+                            <div class="color-info">
+                                <span class="color-name">Text Secondary</span>
+                                <span class="color-value">#8892b0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Typography Section -->
+    <section id="typography" class="section-padding" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// typography</h2>
+                <div class="section-line"></div>
+            </div>
+    
+            <div class="typography-grid">
+                <div class="type-scale">
+                    <h3>Type Scale</h3>
+                    <div class="type-item">
+                        <h1 style="margin: 0;">Heading 1</h1>
+                        <span class="type-details">Inter • 3.5rem • 700</span>
+                    </div>
+                    <div class="type-item">
+                        <h2 style="margin: 0;">Heading 2</h2>
+                        <span class="type-details">Inter • 2.5rem • 600</span>
+                    </div>
+                    <div class="type-item">
+                        <h3 style="margin: 0;">Heading 3</h3>
+                        <span class="type-details">Inter • 1.8rem • 600</span>
+                    </div>
+                    <div class="type-item">
+                        <p style="margin: 0; font-size: 1.1rem;">Body Text</p>
+                        <span class="type-details">Inter • 1.1rem • 400</span>
+                    </div>
+                    <div class="type-item">
+                        <code style="margin: 0; font-size: 1rem;">Code Snippet</code>
+                        <span class="type-details">JetBrains Mono • 1rem • 400</span>
+                    </div>
+                </div>
+    
+                <div class="font-showcase">
+                    <h3>Font Families</h3>
+                    <div class="font-item">
+                        <div class="font-sample" style="font-family: 'Inter'">
+                            Inter
+                        </div>
+                        <span>Primary UI font</span>
+                    </div>
+                    <div class="font-item">
+                        <div class="font-sample" style="font-family: 'JetBrains Mono'">
+                            JetBrains Mono
+                        </div>
+                        <span>Code & technical elements</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Components Section -->
+    <section id="components" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// ui_components</h2>
+                <div class="section-line"></div>
+            </div>
+    
+            <!-- Buttons -->
+            <!-- Update the Buttons section in the Components area -->
+            <div class="component-group">
+                <h3>Buttons</h3>
+                <div class="component-showcase">
+                    <div class="button-variants">
+                        <div class="variant-group">
+                            <h4>Primary Variants</h4>
+                            <button class="btn">Primary Button</button>
+                            <button class="btn btn-outline">Outline Button</button>
+                            <button class="btn" disabled>Disabled Button</button>
+                        </div>
+    
+                        <div class="variant-group">
+                            <h4>Secondary Variants</h4>
+                            <button class="btn btn-secondary">Secondary Button</button>
+                            <button class="btn btn-danger">Danger Button</button>
+                            <button class="btn btn-ghost">Ghost Button</button>
+                        </div>
+    
+                        <div class="variant-group">
+                            <h4>Sizes</h4>
+                            <button class="btn btn-sm">Small Button</button>
+                            <button class="btn">Default Button</button>
+                            <button class="btn btn-lg">Large Button</button>
+                        </div>
+    
+                        <div class="variant-group">
+                            <h4>States</h4>
+                            <button class="btn btn-loading">Loading</button>
+                            <button class="btn btn-pulse">Pulse CTA</button>
+                            <a href="#" class="btn">Link as Button</a>
+                        </div>
+    
+                        <div class="variant-group">
+                            <h4>Button Group</h4>
+                            <div class="btn-group">
+                                <button class="btn">Left</button>
+                                <button class="btn">Middle</button>
+                                <button class="btn">Right</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cards -->
+            <div class="component-group">
+                <h3>Cards</h3>
+                <div class="cards-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Project Card</h3>
+                            <p class="project-description">Showcase project with technologies and links</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">View Code</a>
+                        </div>
+                    </div>
+    
+                    <div class="specialization-card">
+                        <h4>Specialization Card</h4>
+                        <div class="specialization-skills">
+                            <span>Frontend Architecture</span>
+                            <span>State Management</span>
+                            <span>Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Form Elements -->
+            <div class="component-group">
+                <h3>Form Elements</h3>
+                <div class="form-showcase">
+                    <div class="form-group">
+                        <label for="input-text">Text Input</label>
+                        <input type="text" id="input-text" placeholder="Enter your text...">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-email">Email Input</label>
+                        <input type="email" id="input-email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="input-select">Select Input</label>
+                        <select id="input-select">
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Checkbox Option
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Navigation Components -->
+            <div class="component-group">
+                <h3>Navigation</h3>
+                <div class="nav-showcase">
+                    <div class="matrix-tabs">
+                        <button class="matrix-tab active">Active Tab</button>
+                        <button class="matrix-tab">Inactive Tab</button>
+                        <button class="matrix-tab">Another Tab</button>
+                    </div>
+    
+                    <div class="skills-cloud">
+                        <span class="skill-item expert">JavaScript</span>
+                        <span class="skill-item advanced">Python</span>
+                        <span class="skill-item learning">Rust</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Patterns Section -->
+    <section id="patterns" class="section-padding" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// ui_patterns</h2>
+                <div class="section-line"></div>
+            </div>
     
+            <div class="patterns-grid">
+                <!-- Terminal Pattern -->
+                <div class="pattern-card">
+                    <h4>Terminal Interface</h4>
+                    <div class="terminal-window" style="max-width: 100%;">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="close"></span>
+                                <span class="minimize"></span>
+                                <span class="maximize"></span>
+                            </div>
+                            <div class="terminal-title">terminal — design-system — 80×24</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">user@design-system:~$</span>
+                                <span class="command">showcase patterns</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p>> Displaying UI patterns and components</p>
+                                <p>> All elements are fully responsive</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Competency Matrix Pattern -->
+                <div class="pattern-card">
+                    <h4>Competency Matrix</h4>
+                    <div class="competency-matrix" style="padding: 1rem;">
+                        <div class="matrix-domain active">
+                            <div class="field-card">
+                                <h4 class="field-title">Frontend Development</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">Rendering</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>React</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Vue.js</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Skill Cloud Pattern -->
+                <div class="pattern-card">
+                    <h4>Skill Cloud</h4>
+                    <div class="competencies-grid" style="grid-template-columns: 1fr;">
+                        <div class="competency-category">
+                            <h3 class="category-title">
+                                <span class="category-icon">🚀</span>
+                                Production Ready
+                            </h3>
+                            <div class="skills-cloud">
+                                <span class="skill-item expert">TypeScript</span>
+                                <span class="skill-item expert">Node.js</span>
+                                <span class="skill-item expert">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Timeline Pattern -->
+                <div class="pattern-card">
+                    <h4>Timeline</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h3>Senior Developer</h3>
+                                <p>Led team of 5 developers on major project</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022</div>
+                            <div class="timeline-content">
+                                <h3>Full Stack Developer</h3>
+                                <p>Built multiple web applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <link rel="stylesheet" href="section-skills.css" />
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">// tech_stack</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skills-grid">
+              <div class="skill-item" data-level="90">
+                <span class="skill-name">React</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="85">
+                <span class="skill-name">TypeScript</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skills-grid">
+              <div class="skill-item" data-level="88">
+                <span class="skill-name">Node.js</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="75">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Infrastructure</h3>
+            <div class="skills-grid">
+              <div class="skill-item" data-level="85">
+                <span class="skill-name">AWS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+              <div class="skill-item" data-level="80">
+                <span class="skill-name">Docker</span>
+                <div class="skill-bar">
+                  <div class="skill-progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Usage Guidelines -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">// usage_guidelines</h2>
+                <div class="section-line"></div>
+            </div>
     
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h4>Consistency</h4>
+                    <p>Maintain consistent spacing, colors, and typography throughout the application.</p>
+                </div>
+                <div class="guideline-card">
+                    <h4>Accessibility</h4>
+                    <p>Ensure all components meet WCAG 2.1 AA standards for contrast and keyboard navigation.</p>
+                </div>
+                <div class="guideline-card">
+                    <h4>Responsive Design</h4>
+                    <p>All components are designed to work seamlessly across different screen sizes.</p>
+                </div>
+                <div class="guideline-card">
+                    <h4>Performance</h4>
+                    <p>Optimize animations and interactions for smooth performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
+        <section id="competency_matrix" class="section-padding">
+            <link rel="stylesheet" href="section-competency_matrix.css" />
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">// competency_matrix</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">A structured framework mapping technical expertise across software engineering domains</p>
+                </div>
+    
+                <!-- Competency Matrix Navigation -->
+                <div class="matrix-nav">
+                    <div class="matrix-tabs">
+                        <button class="matrix-tab active" data-domain="architecture">Architecture</button>
+                        <button class="matrix-tab" data-domain="backend">Backend</button>
+                        <button class="matrix-tab" data-domain="frontend">Frontend</button>
+                        <button class="matrix-tab" data-domain="cloud">Cloud & DevOps</button>
+                        <button class="matrix-tab" data-domain="data">Data Engineering</button>
+                        <button class="matrix-tab" data-domain="testing">Testing & QA</button>
+                    </div>
+                </div>
+    
+                <!-- Competency Matrix Container -->
+                <div class="competency-matrix">
+                    <!-- Architecture Domain -->
+                    <div class="matrix-domain active" id="architecture">
+                        <div class="domain-header">
+                            <h3>System Architecture & Design</h3>
+                            <div class="domain-proficiency">
+                                <span class="proficiency-level">Level 8/10</span>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-grid">
+                            <div class="field-card">
+                                <h4 class="field-title">Design Patterns</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">Creational Patterns</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="9">
+                                                <span>Factory Method</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Singleton</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Builder</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">Structural Patterns</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Adapter</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Facade</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="field-card">
+                                <h4 class="field-title">System Design</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">Scalability</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Load Balancing</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Caching Strategies</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">Architecture Styles</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="9">
+                                                <span>Microservices</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Event-Driven</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Backend Domain -->
+                    <div class="matrix-domain" id="backend">
+                        <div class="domain-header">
+                            <h3>Backend Development</h3>
+                            <div class="domain-proficiency">
+                                <span class="proficiency-level">Level 9/10</span>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-grid">
+                            <div class="field-card">
+                                <h4 class="field-title">API Development</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">REST APIs</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="9">
+                                                <span>Express.js</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>FastAPI</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">GraphQL</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Apollo Server</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="field-card">
+                                <h4 class="field-title">Database Systems</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">SQL Databases</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>PostgreSQL</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>MySQL</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">NoSQL Databases</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>MongoDB</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="6">
+                                                <span>Redis</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Frontend Domain -->
+                    <div class="matrix-domain" id="frontend">
+                        <div class="domain-header">
+                            <h3>Frontend Development</h3>
+                            <div class="domain-proficiency">
+                                <span class="proficiency-level">Level 8/10</span>
+                                <div class="proficiency-bar">
+                                    <div class="proficiency-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="matrix-grid">
+                            <div class="field-card">
+                                <h4 class="field-title">Rendering Patterns</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">Performance</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Lighthouse Metrics</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>RUM Metrics</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Hydration Strategies</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">Optimization</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="9">
+                                                <span>Code Splitting</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Lazy Loading</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="field-card">
+                                <h4 class="field-title">Accessibility</h4>
+                                <div class="categories-list">
+                                    <div class="category-item">
+                                        <span class="category-name">WCAG Compliance</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Screen Readers</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Keyboard Navigation</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <span class="category-name">ARIA</span>
+                                        <div class="subjects-grid">
+                                            <div class="subject-item" data-proficiency="8">
+                                                <span>Landmark Roles</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                            <div class="subject-item" data-proficiency="7">
+                                                <span>Live Regions</span>
+                                                <div class="subject-proficiency"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Legend -->
+                    <div class="competency-legend">
+                        <h4>Proficiency Scale</h4>
+                        <div class="legend-items">
+                            <div class="legend-item">
+                                <div class="legend-color level-1-3"></div>
+                                <span>1-3: Learning</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color level-4-6"></div>
+                                <span>4-6: Proficient</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color level-7-8"></div>
+                                <span>7-8: Advanced</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color level-9-10"></div>
+                                <span>9-10: Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="code-symbol">&lt;/&gt;</span>
+                    <span>Design System v1.0</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#colors">Colors</a>
+                    <a href="#typography">Typography</a>
+                    <a href="#components">Components</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 

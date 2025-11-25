@@ -2,6 +2,46 @@
 <html lang="en">
 
 <head>
+    <script charset="UTF-8">
+        window.addEventListener('load', () => {
+            const performanceEntries = performance.getEntriesByType('navigation');
+            const navigationTiming = performanceEntries[0];
+
+            const htmlLoadTime = navigationTiming.responseEnd - navigationTiming.startTime;
+            console.log(`HTML Loading Time: ${htmlLoadTime}ms`);
+
+            const totalCSSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'link')
+                .reduce((total, css) => total + css.transferSize, 0);
+            console.log(`Total CSS Size: ${totalCSSSize / 1024} kbytes`);
+
+            const totalJSSize = performance.getEntriesByType('resource')
+                .filter(entry => entry.initiatorType === 'script')
+                .reduce((total, js) => total + js.transferSize, 0);
+            console.log(`Total JS Size: ${totalJSSize / 1024} kbytes`);
+
+            const cssEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'link');
+            const jsEntries = performance.getEntriesByType('resource').filter(entry => entry.initiatorType === 'script');
+
+            const details = [
+                { Type: 'HTML', 'Load Time (ms)': htmlLoadTime, 'Size (kB)': 'N/A' },
+                ...cssEntries.map(css => ({
+                    Type: 'CSS',
+                    'File': css.name,
+                    'Load Time (ms)': css.responseEnd - css.startTime,
+                    'Size (kB)': (css.transferSize / 1024).toFixed(2)
+                })),
+                ...jsEntries.map(js => ({
+                    Type: 'JS',
+                    'File': js.name,
+                    'Load Time (ms)': js.responseEnd - js.startTime,
+                    'Size (kB)': (js.transferSize / 1024).toFixed(2)
+                }))
+            ];
+
+            console.table(details);
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Serban Portfolio | Front-end Software Engineer</title>
@@ -25,7 +65,7 @@
         		</div>
         		<ul class="navbar__links">
         			<li><a href="#about" class="navbar__link">_about</a></li>
-        			<li><a href="#skills" class="navbar__link">_skills</a></li>
+        			<li><a href="#technical-arsenal" class="navbar__link">_technical_arsenal</a></li>
         			<li><a href="#projects" class="navbar__link">_projects</a></li>
         			<li><a href="#experience" class="navbar__link">_experience</a></li>
         			<li><a href="#contact" class="navbar__link">_contact</a></li>
@@ -45,7 +85,424 @@
         	</div>
         
         	<script src="section-navbar.js"></script>
-        </nav>    
+        </nav>    <section id="welcome-section" class="section-hero__base">
+          <link rel="stylesheet" href="section-hero.css" />
+        
+            <div class="terminal-window__base">
+              <link rel="stylesheet" href="terminal-window.css" />
+              <div class="terminal-window__header">
+                <div class="terminal-window__buttons">
+                  <span class="close"></span>
+                  <span class="minimize"></span>
+                  <span class="maximize"></span>
+                </div>
+                <div class="terminal-window__title">terminal — zsh — 80x24</div>
+              </div>
+              <div class="terminal-window__body">
+                <div class="terminal-window__line">
+                  <span class="prompt">visitor@portfolio:~$</span>
+                  <span class="command">cat about_me.txt</span>
+                </div>
+                <div class="terminal-window__output">
+                  <h1 class="typing-text">Hello, I&#x27;m Paul Serban</h1>
+                  <p class="typing-text delay-1">Front-end Software Engineer</p>
+                  <div class="typing-text delay-2">
+                      <p>> Building scalable solutions with clean, maintainable code</p>
+                      <p>> Passionate about front-end engineering and user experience</p>
+                      <p>> 3+ years crafting digital experiences</p>
+                  </div>
+                </div>
+                <div class="terminal-window__line">
+                  <span class="prompt">visitor@portfolio:~$</span>
+                  <span class="cursor">|</span>
+                </div>
+              </div>
+            </div>
+          <div class="section-hero__scroll-hint">
+            <div class="section-hero__scroll-line"></div>
+            <span>scroll to explore</span>
+          </div>
+        </section>        <section id="about" class="section-padding">
+                <link rel="stylesheet" href="section-about.css" />
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">// about_me</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">javascript</span>
+                                </div>
+                                <pre><code>const developer = {
+          name: "Paul Serban",
+          role: "Front-end Software Engineer",
+          location: "Bucharest, Romania",
+          passions: [
+            "Responsive Web Design",
+            "JavaScript / TypeScript",
+            "Front-end Build Systems",
+            "React",
+            "Next.js",
+            "GraphQL",
+          ],
+          quote: "First, solve the problem. Then write the code."
+        };</code></pre>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h3>Engineering with Purpose</h3>
+                            <p>I specialize in building robust, scalable front-end solutions that deliver exceptional user experiences. My approach combines technical excellence with business understanding to deliver impactful solutions.</p>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number" data-count="3">0</div>
+                                    <div class="stat-label">Years Experience</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number" data-count="25">0</div>
+                                    <div class="stat-label">Technologies</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>    <section id="technical-arsenal" class="section-padding">
+            <link rel="stylesheet" href="section-technical-arsenal.css" />
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">// technical_arsenal</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Tools, technologies, and methodologies I work with</p>
+                </div>
+        
+                <!-- Core Competencies -->
+                <div class="competencies-grid">
+                    <div class="competency-category">
+                        <h3 class="category-title">
+                            Production Ready
+                        </h3>
+                        <div class="skills-cloud">
+                            <span class="skill-item expert">JavaScript</span>
+                            <span class="skill-item expert">TypeScript</span>
+                            <span class="skill-item expert">React</span>
+                            <span class="skill-item expert">Node.js</span>
+                            <span class="skill-item expert">Docker</span>
+                            <span class="skill-item expert">Git</span>
+                            <span class="skill-item expert">REST APIs</span>
+                            <span class="skill-item expert">Linux</span>
+                        </div>
+                    </div>
+        
+                    <div class="competency-category">
+                        <h3 class="category-title">
+                            Strong & Growing
+                        </h3>
+                        <div class="skills-cloud">
+                            <span class="skill-item advanced">AWS</span>
+                            <span class="skill-item advanced">PostgreSQL</span>
+                            <span class="skill-item advanced">Python</span>
+                            <span class="skill-item advanced">GraphQL</span>
+                            <span class="skill-item advanced">MongoDB</span>
+                            <span class="skill-item advanced">Redis</span>
+                            <span class="skill-item advanced">CI/CD</span>
+                            <span class="skill-item advanced">Microservices</span>
+                            <span class="skill-item advanced">System Design</span>
+                        </div>
+                    </div>
+        
+                    <div class="competency-category">
+                        <h3 class="category-title">
+                            Exploring & Learning
+                        </h3>
+                        <div class="skills-cloud">
+                            <span class="skill-item learning">Kubernetes</span>
+                            <span class="skill-item learning">Terraform</span>
+                            <span class="skill-item learning">Go</span>
+                            <span class="skill-item learning">AI Engineering</span>
+                            <span class="skill-item learning">Blockchain</span>
+                            <span class="skill-item learning">Edge Computing</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Specialized Skills -->
+                <div class="specializations-grid">
+                    <div class="specialization-card">
+                        <h4>Frontend Architecture</h4>
+                        <div class="specialization-skills">
+                            <span>Front-end Build Infrastructure</span>
+                            <span>React Hooks</span>
+                            <span>State Management</span>
+                            <span>Component Design</span>
+                            <span>Performance Optimization</span>
+                            <span>Testing Library</span>
+                        </div>
+                    </div>
+        
+                    <div class="specialization-card">
+                        <h4>Backend Systems</h4>
+                        <div class="specialization-skills">
+                            <span>API Design</span>
+                            <span>Database Optimization</span>
+                            <span>Authentication</span>
+                            <span>Caching Strategies</span>
+                            <span>Message Queues</span>
+                            <span>Error Handling</span>
+                        </div>
+                    </div>
+        
+                    <div class="specialization-card">
+                        <h4>DevOps & Infrastructure</h4>
+                        <div class="specialization-skills">
+                            <span>Cloud Architecture</span>
+                            <span>Containerization</span>
+                            <span>Monitoring</span>
+                            <span>Security</span>
+                            <span>Automation</span>
+                            <span>Scaling</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Methodologies -->
+                <div class="methodologies-section">
+                    <h3>Development Methodologies</h3>
+                    <div class="methodologies-list">
+                        <div class="methodology-item">
+                            <strong>Agile & Scrum</strong>
+                            <span>Daily standups, sprints, retrospectives</span>
+                        </div>
+                        <div class="methodology-item">
+                            <strong>Test-Driven Development</strong>
+                            <span>Jest, Cypress, unit, integration & e2e testing</span>
+                        </div>
+                        <div class="methodology-item">
+                            <strong>CI/CD</strong>
+                            <span>GitHub Actions, automated deployments</span>
+                        </div>
+                        <div class="methodology-item">
+                            <strong>Code Reviews</strong>
+                            <span>Pull request best practices, constructive feedback</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    <section id="projects" class="section-padding">
+          <link rel="stylesheet" href="section-projects.css" />
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">// featured_projects</h2>
+              <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">Personal Portfolio</h3>
+                  <p class="project-description">A simple, static personal portfolio website to showcase projects, coursework, and front-end software engineering skills.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/prj--personal-portfolio--v1" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">React.js Playground (Workbook)</h3>
+                  <p class="project-description">This is a workbook project where I experiment with various React.js concepts and features.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/react-playground-workbook" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">Front-end Playground (Workbook)</h3>
+                  <p class="project-description">A workbook project to explore and practice front-end development techniques and technologies.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/front-end-playground-workbook" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">OpenClassRooms - Web Developer Certification Projects (Workbook)</h3>
+                  <p class="project-description">A collection of projects completed as part of the OpenClassRooms Web Developer certification.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/openclassrooms-web-developer-certification-projects" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">FreeCodeCamp - RWD &amp; FE Libraries Certification Projects (Workbook)</h3>
+                  <p class="project-description">A collection of projects completed as part of the FreeCodeCamp Responsive Web Design and Front End Development Libraries certification.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/freecodecamp-front-end-development-libraries-certification-projects" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-header">
+                  <h3 class="project-title">FreeCodeCamp - Data Structures and Algorithms Certification Projects (Workbook)</h3>
+                  <p class="project-description">A collection of projects completed as part of the FreeCodeCamp Data Structures and Algorithms certification.</p>
+                  <div class="project-tech">
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paulAlexSerban/freecodecamp-data-structures-algorithms-certification-projects" class="project-link" target="_blank">
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="" class="project-link" target="_blank">
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>    <section id="experience" class="section-padding">
+            <link rel="stylesheet" href="section-experience.css" />
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">// experience</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Front-end Software Engineer</h3>
+                            <h4>Congnizant Netcentric</h4>
+                            <p>Built and maintained web-sites and web-app using Front-end Core Technologies and React.
+                                Implemented Front-end CI/CD pipelines with build tools such as Webpack and Vite.</p>
+                            <div class="tech-tags">
+                                <span>Front-end Core Technologies</span>
+                                <span>TypeScript</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>GitHub Actions</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    <section id="contact" class="section-padding">
+            <link rel="stylesheet" href="section-contact.css" />
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">// get_in_touch</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's Build Something Amazing</h3>
+                        <p>I'm always interested in new opportunities and challenging projects.
+                            Let's connect and discuss how we can work together.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-detail">
+                                    <strong>Email</strong>
+                                    <a class="encoded-email" href="bWFpbHRvOnBhdWwuYWxleC5zZXJiYW5AZ21haWwuY29t">paul[dot]alex[dot]serban[at]gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">💼</div>
+                                <div class="contact-detail">
+                                    <strong>LinkedIn</strong>
+                                    <a href="https://www.linkedin.com/in/paulalexs/" target="_blank">/in/paulalexs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-links">
+                        <h3>Connect With Me</h3>
+                        <div class="social-grid">
+                            <a id="profile-link" href="https://github.com/paulAlexSerban" target="_blank" class="social-card">
+                                <div class="social-icon">Git</div>
+                                <div class="social-info">
+                                    <strong>GitHub</strong>
+                                    <span>@paulAlexSerban</span>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/paulalexs/" target="_blank" class="social-card">
+                                <div class="social-icon">in</div>
+                                <div class="social-info">
+                                    <strong>LinkedIn</strong>
+                                    <span>Professional Profile</span>
+                                </div>
+                            </a>
+                            <a href="https://leetcode.com/u/paulSerban" target="_blank" class="social-card">
+                                <div class="social-icon">LC</div>
+                                <div class="social-info">
+                                    <strong>LeetCode</strong>
+                                    <span>Problem Solving</span>
+                                </div>
+                            </a>
+                            <a href="https://www.hackerrank.com/profile/paul_alex_serban" target="_blank" class="social-card">
+                                <div class="social-icon">HR</div>
+                                <div class="social-info">
+                                    <strong>HackerRank</strong>
+                                    <span>Technical Challenges</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    <footer class="footer__base">
+          <link rel="stylesheet" href="section-footer.css" />
+        
+          <div class="footer__container">
+            <div class="footer__content">
+              <div class="footer__brand">
+                <span class="code-symbol">&lt;/&gt;</span>
+                <span>Built with code and passion</span>
+              </div>
+              <div class="footer__links">
+                <a href="#welcome-section">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+          </div>
+        </footer>
     <script src="main.js"></script>
 </body>
 
