@@ -5,9 +5,5 @@
     "Building scalable solutions with clean, maintainable code",
     "Passionate about front-end engineering and user experience",
     "3+ years crafting digital experiences"
-  ],
-  "buttons": [
-    { "text": "View My Work", "href": "#projects", "class": "btn" },
-    { "text": "Get In Touch", "href": "#contact", "class": "btn btn-outline" }
   ]
 }
