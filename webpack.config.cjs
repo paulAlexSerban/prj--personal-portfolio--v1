@@ -7,6 +7,8 @@ const TerserPlugin = require("terser-webpack-plugin");
 const Handlebars = require("handlebars");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const glob = require("glob");
+
 const DATA_DIR = path.join(__dirname, "src", "data");
 
 const getJsonData = (dataDir) => {
@@ -48,18 +50,28 @@ const getJsonData = (dataDir) => {
 };
 
 const getJsEntries = (scriptsDir) => {
-  const scriptsDirFiles = fs.readdirSync(scriptsDir);
+  // use glob to get all .js files in the scripts directory tree
+  const scriptFiles = glob.sync(path.join(scriptsDir, "**", "*.entry.js"));
   const entries = {};
-
-  for (const file of scriptsDirFiles) {
-    if (path.extname(file) === ".js") {
-      const key = path.basename(file, ".js");
-      const filePath = path.join(scriptsDir, file);
-      entries[key] = filePath;
-    }
-  }
-
+  
+  scriptFiles.forEach((filePath) => {
+    const relativePath = path.relative(scriptsDir, filePath);
+    const entryName = relativePath.replace(/\.js$/, "").replace(/\\/g, "/");
+    entries[entryName] = filePath;
+  });
   return entries;
+  // const scriptsDirFiles = fs.readdirSync(scriptsDir);
+  // const entries = {};
+
+  // for (const file of scriptsDirFiles) {
+  //   if (path.extname(file) === ".js") {
+  //     const key = path.basename(file, ".js");
+  //     const filePath = path.join(scriptsDir, file);
+  //     entries[key] = filePath;
+  //   }
+  // }
+
+  // return entries;
 };
 
 module.exports = {

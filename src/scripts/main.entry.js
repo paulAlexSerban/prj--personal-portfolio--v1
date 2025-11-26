@@ -1,112 +1,111 @@
-import "../styles/styles.scss";
+import "../styles/reset.scss";
+import "../styles/main.scss";
 
 (() => {
-  // script.js
-  document.addEventListener("DOMContentLoaded", function () {
-    // Animate skill bars on scroll
-    const animateSkillBars = () => {
-      const skillItems = document.querySelectorAll(".skill-item");
-      skillItems.forEach((item) => {
-        const level = item.getAttribute("data-level");
-        const progressBar = item.querySelector(".skill-progress");
+  // // script.js
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   // Animate skill bars on scroll
+  //   const animateSkillBars = () => {
+  //     const skillItems = document.querySelectorAll(".skill-item");
+  //     skillItems.forEach((item) => {
+  //       const level = item.getAttribute("data-level");
+  //       const progressBar = item.querySelector(".skill-progress");
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (progressBar && entry.isIntersecting) {
-                progressBar.style.width = `${level}%`;
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.5 }
-        );
+  //       const observer = new IntersectionObserver(
+  //         (entries) => {
+  //           entries.forEach((entry) => {
+  //             if (progressBar && entry.isIntersecting) {
+  //               progressBar.style.width = `${level}%`;
+  //               observer.unobserve(entry.target);
+  //             }
+  //           });
+  //         },
+  //         { threshold: 0.5 }
+  //       );
 
-        observer.observe(item);
-      });
-    };
-    const animateStats = () => {
-      const statNumbers = document.querySelectorAll(".stat-number");
+  //       observer.observe(item);
+  //     });
+  //   };
+  //   const animateStats = () => {
+  //     const statNumbers = document.querySelectorAll(".stat-number");
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const target = entry.target;
-              const count = parseInt(target.getAttribute("data-count"));
-              const duration = 2000; // 2 seconds
-              const step = count / (duration / 16); // 60fps
-              let current = 0;
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           if (entry.isIntersecting) {
+  //             const target = entry.target;
+  //             const count = parseInt(target.getAttribute("data-count"));
+  //             const duration = 2000; // 2 seconds
+  //             const step = count / (duration / 16); // 60fps
+  //             let current = 0;
 
-              const timer = setInterval(() => {
-                current += step;
-                if (current >= count) {
-                  current = count;
-                  clearInterval(timer);
-                }
-                target.textContent = Math.floor(current);
-              }, 16);
+  //             const timer = setInterval(() => {
+  //               current += step;
+  //               if (current >= count) {
+  //                 current = count;
+  //                 clearInterval(timer);
+  //               }
+  //               target.textContent = Math.floor(current);
+  //             }, 16);
 
-              observer.unobserve(target);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
+  //             observer.unobserve(target);
+  //           }
+  //         });
+  //       },
+  //       { threshold: 0.5 }
+  //     );
 
-      statNumbers.forEach((stat) => observer.observe(stat));
-    };
-    animateSkillBars();
-    animateStats();
+  //     statNumbers.forEach((stat) => observer.observe(stat));
+  //   };
+  //   animateSkillBars();
+  //   animateStats();
 
-    const decodeOnHover = () => {
-      const encodedEmails = document.querySelectorAll(".encoded-email");
-      encodedEmails.forEach((element) => {
-        element.addEventListener("mouseover", () => {
-          const encodedHref = element.getAttribute("href");
-          try {
-            const decodedHref = atob(encodedHref);
-            element.setAttribute("href", decodedHref);
-          } catch (e) {
-            console.error("Failed to decode email:", e);
-          }
-        });
+  //   const decodeOnHover = () => {
+  //     const encodedEmails = document.querySelectorAll(".encoded-email");
+  //     encodedEmails.forEach((element) => {
+  //       element.addEventListener("mouseover", () => {
+  //         const encodedHref = element.getAttribute("href");
+  //         try {
+  //           const decodedHref = atob(encodedHref);
+  //           element.setAttribute("href", decodedHref);
+  //         } catch (e) {
+  //           console.error("Failed to decode email:", e);
+  //         }
+  //       });
 
-        element.addEventListener("mouseout", () => {
-          const decodedHref = element.getAttribute("href");
-          try {
-            const encodedHref = btoa(decodedHref);
-            element.setAttribute("href", encodedHref);
-          } catch (e) {
-            console.error("Failed to encode email:", e);
-          }
-        });
+  //       element.addEventListener("mouseout", () => {
+  //         const decodedHref = element.getAttribute("href");
+  //         try {
+  //           const encodedHref = btoa(decodedHref);
+  //           element.setAttribute("href", encodedHref);
+  //         } catch (e) {
+  //           console.error("Failed to encode email:", e);
+  //         }
+  //       });
 
-        element.addEventListener("focus", (e) => {
-          const encodedHref = element.getAttribute("href");
-          try {
-            const decodedHref = atob(encodedHref);
-            element.setAttribute("href", decodedHref);
-          } catch (e) {
-            console.error("Failed to decode email:", e);
-          }
-        });
+  //       element.addEventListener("focus", (e) => {
+  //         const encodedHref = element.getAttribute("href");
+  //         try {
+  //           const decodedHref = atob(encodedHref);
+  //           element.setAttribute("href", decodedHref);
+  //         } catch (e) {
+  //           console.error("Failed to decode email:", e);
+  //         }
+  //       });
 
-        element.addEventListener("blur", (e) => {
-          const decodedHref = element.getAttribute("href");
-          try {
-            const encodedHref = btoa(decodedHref);
-            element.setAttribute("href", encodedHref);
-          } catch (e) {
-            console.error("Failed to encode email:", e);
-          }
-        });
-      });
-    };
-    decodeOnHover();
-
-
-  });
+  //       element.addEventListener("blur", (e) => {
+  //         const decodedHref = element.getAttribute("href");
+  //         try {
+  //           const encodedHref = btoa(decodedHref);
+  //           element.setAttribute("href", encodedHref);
+  //         } catch (e) {
+  //           console.error("Failed to encode email:", e);
+  //         }
+  //       });
+  //     });
+  //   };
+  //   decodeOnHover();
+  // });
 
   // Animate stats counter
 

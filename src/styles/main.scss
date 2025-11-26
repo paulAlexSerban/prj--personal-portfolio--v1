@@ -1,8 +1,7 @@
-@use "./partials/grid.scss";
-@use "./partials/typography.scss";
-@use "./partials/sections.scss";
+@use "./partials/variables";
 
 :root {
+  --measure: 60ch;
   --primary-bg: #0a0a0f;
   --secondary-bg: #15151f;
   --tertiary-bg: #1e1e2e;
@@ -49,4 +48,52 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+.nav-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-line {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-color);
+  margin: 0.5rem auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
 }

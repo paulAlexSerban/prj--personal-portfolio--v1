@@ -1,3 +1,5 @@
+@use "./partials/variables" as vars;
+
 .navbar {
   &__base {
     position: fixed;
@@ -15,32 +17,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
+    padding: vars.$baseline vars.$gutter;
+    max-width: vars.$max-width;
     margin: 0 auto;
   }
 
-
-
   &__links {
-    display: flex;
+    display: none;
     list-style: none;
-    gap: 2rem;
+    gap: vars.$gutter;
 
-    @media (max-width: 768px) {
-      display: none;
+    @media (min-width: vars.$tablet-md) {
+      display: flex;
     }
   }
+
+
 
   &__link {
     font-family: "JetBrains Mono", monospace;
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: vars.$font-size--s;
     transition: var(--transition);
     position: relative;
 
     &:hover {
+
       color: var(--accent-color);
 
       &::after {
@@ -58,13 +61,28 @@
       background: var(--accent-color);
       transition: var(--transition);
     }
+
+    &.active {
+      color: var(--accent-color);
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: vars.$gutter;
+    flex-direction: row;
   }
 
   &__theme-toggle {
     background: transparent;
     border: none;
     color: var(--text-primary);
-    padding: 8px;
+    padding: vars.$baseline;
     cursor: pointer;
     transition: var(--transition);
 
@@ -75,12 +93,12 @@
   }
 
   &__mobile-menu-button {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
 
-    @media (max-width: 768px) {
-      display: flex;
+    @media (min-width: vars.$tablet-md) {
+      display: none;
     }
   }
 
@@ -93,14 +111,4 @@
       transition: var(--transition);
     }
   }
-}
-
-.nav-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
 }
