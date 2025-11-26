@@ -7,7 +7,7 @@ const config = {
     themeToggle: "#themeToggle",
     themeIcon: ".navbar__theme-icon",
     mobileMenuButton: ".navbar__mobile-menu-button",
-    navbarLinks: "#navbar-links",
+    navbarLinks: ".navbar__links",
     navLink: ".navbar__link",
     sections: "section[id]",
   },

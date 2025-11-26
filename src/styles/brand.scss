@@ -1,8 +1,11 @@
+@use "sass:math";
+@use "./partials/variables" as vars;
+
 .brand {
   &__base {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: math.div(vars.$baseline, 2);
     font-family: "JetBrains Mono", monospace;
     font-weight: 700;
   }
@@ -13,6 +16,6 @@
   }
 
   &__dev-name {
-    font-size: 16px;
+    font-size: vars.$font-size--m;
   }
 }

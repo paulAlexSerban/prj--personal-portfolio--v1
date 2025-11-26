@@ -30,9 +30,18 @@
     @media (min-width: vars.$tablet-md) {
       display: flex;
     }
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      background: var(--glass-bg);
+      width: 100%;
+      left: 0;
+      padding-left: vars.$gutter;
+    }
   }
-
-
 
   &__link {
     font-family: "JetBrains Mono", monospace;
@@ -43,7 +52,6 @@
     position: relative;
 
     &:hover {
-
       color: var(--accent-color);
 
       &::after {
@@ -109,6 +117,18 @@
       background: var(--text-primary);
       margin: 3px 0;
       transition: var(--transition);
+    }
+
+    &.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
     }
   }
 }

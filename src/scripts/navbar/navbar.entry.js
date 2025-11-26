@@ -29,7 +29,6 @@ import config from "./navbar.config.js";
       }
     });
 
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
       document.documentElement.setAttribute(
@@ -39,7 +38,6 @@ import config from "./navbar.config.js";
       themeIcon.textContent = config.themeIcons.lightThemeIcon;
     }
 
-    // Mobile Menu Toggle
     const mobileMenuButton = document.querySelector(
       config.selectors.mobileMenuButton
     );
@@ -50,16 +48,30 @@ import config from "./navbar.config.js";
         mobileMenuButton.classList.toggle("active");
       });
 
-      // Close menu when a link is clicked (for single-page navigation)
       navbarLinks.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           navbarLinks.classList.remove("active");
           mobileMenuButton.classList.remove("active");
         });
       });
-    }
 
-    // Active Link Highlighting
+      document.addEventListener("click", (event) => {
+        if (
+          !navbarLinks.contains(event.target) &&
+          !mobileMenuButton.contains(event.target)
+        ) {
+          navbarLinks.classList.remove("active");
+          mobileMenuButton.classList.remove("active");
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          navbarLinks.classList.remove("active");
+          mobileMenuButton.classList.remove("active");
+        }
+      });
+    }
 
     const highlightNavLink = () => {
       let current = "";
