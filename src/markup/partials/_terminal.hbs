@@ -1,30 +1,41 @@
   <div class="terminal__base">
-    <link rel="stylesheet" href="terminal.css" />
+    <link rel="stylesheet" href="terminal/terminal.entry.css" />
+
     <div class="terminal__header">
+
       <div class="terminal__buttons">
         <span class="close"></span>
         <span class="minimize"></span>
         <span class="maximize"></span>
       </div>
+
       <div class="terminal__title">terminal — zsh — 80x24</div>
+      
     </div>
+
     <div class="terminal__body">
+
       <div class="terminal__line">
         <span class="prompt">visitor@portfolio:~$</span>
         <span class="command">cat about_me.txt</span>
       </div>
+
       <div class="terminal__output">
         <h1 class="typing-text">{{page.hero.title}}</h1>
-        <p class="typing-text delay-1">{{page.hero.subtitle}}</p>
-        <div class="typing-text delay-2">
+        <div class="typing-text delay-1 text-reveal"><p>{{page.hero.subtitle}}</p></div>
+        <div class="typing-text delay-2 text-reveal">
           {{#each page.hero.description}}
-            <p>> {{this}}</p>
+            <p class="">> {{this}}</p>
           {{/each}}
         </div>
       </div>
-      <div class="terminal__line">
+
+      <div class="terminal__line terminal__line--blinking-cursor">
         <span class="prompt">visitor@portfolio:~$</span>
         <span class="cursor">|</span>
       </div>
+
     </div>
+
+    <script src="terminal/terminal.entry.js" async defer></script>
   </div>
