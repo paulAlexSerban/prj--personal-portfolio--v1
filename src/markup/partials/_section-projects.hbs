@@ -1,33 +1,26 @@
-<section id="projects" class="section-padding">
-  <link rel="stylesheet" href="section-projects.css" />
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">// featured_projects</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="projects-grid">
-      {{#each projects}}
-      <div class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">{{this.title}}</h3>
-          <p class="project-description">{{this.description}}</p>
-          <div class="project-tech">
-            {{#each this.technologies}}
-            <span class="tech-tag">{{this}}</span>
-            {{/each}}
-          </div>
-        </div>
-        <div class="project-links">
-          <a href="{{this.demo}}" class="project-link" target="_blank">
-            <span>Live Demo</span>
-          </a>
-          <a href="{{this.code}}" class="project-link" target="_blank">
-            <span>View Code</span>
-          </a>
-        </div>
+{{#> partials/_section title="featured_projects" id="projects"}}
+
+<div class="projects-grid">
+  {{#each projects}}
+  <div class="project-card">
+    <div class="project-header">
+      <h3 class="project-title">{{this.title}}</h3>
+      <p class="project-description">{{this.description}}</p>
+      <div class="project-tech">
+        {{#each this.technologies}}
+        <span class="tech-tag">{{this}}</span>
+        {{/each}}
       </div>
-      {{/each}}
+    </div>
+    <div class="project-links">
+      <a href="{{this.demo}}" class="project-link" target="_blank">
+        <span>Live Demo</span>
+      </a>
+      <a href="{{this.code}}" class="project-link" target="_blank">
+        <span>View Code</span>
+      </a>
     </div>
   </div>
-  </div>
-</section>
+  {{/each}}
+</div>
+{{/ partials/_section}}
