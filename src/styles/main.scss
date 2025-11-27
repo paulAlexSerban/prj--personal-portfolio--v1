@@ -2,6 +2,8 @@
 @use "./partials/reset";
 @use "./partials/variables" as vars;
 
+@use "./technical-arsenal.scss";
+
 // CUSTOM RESET
 * {
   margin: 0;
@@ -104,6 +106,11 @@ body {
     font-size: vars.$font-size--xxl;
     color: var(--accent-color);
     margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: vars.$font-size--l;
+    color: var(--text-secondary);
   }
 }
 

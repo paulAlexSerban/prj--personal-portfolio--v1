@@ -2,10 +2,13 @@
     <div class="section__container">
         <div class="section__header">
             <h2 class="section__title">// {{title}}</h2>
+            {{#if subtitle}}
+            <p class="section__subtitle">{{subtitle}}</p>
+            {{/if}}
             <div class="section__line"></div>
         </div>
 
-{{> @partial-block}}
-        
+        {{> @partial-block}}
+
     </div>
 </section>
