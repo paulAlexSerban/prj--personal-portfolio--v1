@@ -45,7 +45,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul Serban Portfolio | Design System Documentation</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.entry.css">
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -55,12 +55,12 @@
 
         <!-- Navigation -->
         <nav id="navbar" class="navbar__base">
-        	<link rel="stylesheet" href="navbar.css" />
+        	<link rel="stylesheet" href="navbar/navbar.entry.css" />
         
         	<div class="navbar__container">
         
         		<div class="brand__base">
-        		    <link rel="stylesheet" href="cmp-brand.css" />
+        		    <link rel="stylesheet" href="brand.entry.css" />
         		    <span class="brand__code-symbol">&lt;/&gt;</span>
         		    <span class="brand__dev-name">PAUL_SERBAN_DS</span>
         		</div>
@@ -71,20 +71,24 @@
         			<li><a href="#patterns" class="navbar__link">_patterns</a></li>
         		</ul>
         
+        
         		<div class="navbar__actions">
         			<button class="navbar__theme-toggle" id="themeToggle">
         				<span class="navbar__theme-icon">🌙</span>
         			</button>
+        
+        			<div class="navbar__mobile-menu-button">
+        				<span></span>
+        				<span></span>
+        				<span></span>
+        			</div>
         		</div>
         
-        		<div class="navbar__mobile-menu-button">
-        			<span></span>
-        			<span></span>
-        			<span></span>
-        		</div>
+        
+        
         	</div>
         
-        	<script src="navbar.js"></script>
+        	<script src="navbar/navbar.entry.js"></script>
         </nav>
     <!-- Hero Section -->
     <section id="welcome-section" style="height: 60vh;">
@@ -844,7 +848,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.entry.js"></script>
 </body>
 
 </html>
