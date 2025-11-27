@@ -2,71 +2,27 @@ import "../styles/main.scss";
 
 (() => {
   // // script.js
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   // Animate skill bars on scroll
-  //   const animateSkillBars = () => {
-  //     const skillItems = document.querySelectorAll(".skill-item");
-  //     skillItems.forEach((item) => {
-  //       const level = item.getAttribute("data-level");
-  //       const progressBar = item.querySelector(".skill-progress");
-  //       const observer = new IntersectionObserver(
-  //         (entries) => {
-  //           entries.forEach((entry) => {
-  //             if (progressBar && entry.isIntersecting) {
-  //               progressBar.style.width = `${level}%`;
-  //               observer.unobserve(entry.target);
-  //             }
-  //           });
-  //         },
-  //         { threshold: 0.5 }
-  //       );
-  //       observer.observe(item);
-  //     });
-  //   };
-  //   animateSkillBars();
-  //   const decodeOnHover = () => {
-  //     const encodedEmails = document.querySelectorAll(".encoded-email");
-  //     encodedEmails.forEach((element) => {
-  //       element.addEventListener("mouseover", () => {
-  //         const encodedHref = element.getAttribute("href");
-  //         try {
-  //           const decodedHref = atob(encodedHref);
-  //           element.setAttribute("href", decodedHref);
-  //         } catch (e) {
-  //           console.error("Failed to decode email:", e);
-  //         }
-  //       });
-  //       element.addEventListener("mouseout", () => {
-  //         const decodedHref = element.getAttribute("href");
-  //         try {
-  //           const encodedHref = btoa(decodedHref);
-  //           element.setAttribute("href", encodedHref);
-  //         } catch (e) {
-  //           console.error("Failed to encode email:", e);
-  //         }
-  //       });
-  //       element.addEventListener("focus", (e) => {
-  //         const encodedHref = element.getAttribute("href");
-  //         try {
-  //           const decodedHref = atob(encodedHref);
-  //           element.setAttribute("href", decodedHref);
-  //         } catch (e) {
-  //           console.error("Failed to decode email:", e);
-  //         }
-  //       });
-  //       element.addEventListener("blur", (e) => {
-  //         const decodedHref = element.getAttribute("href");
-  //         try {
-  //           const encodedHref = btoa(decodedHref);
-  //           element.setAttribute("href", encodedHref);
-  //         } catch (e) {
-  //           console.error("Failed to encode email:", e);
-  //         }
-  //       });
-  //     });
-  //   };
-  //   decodeOnHover();
-  // });
+  // Animate skill bars on scroll
+  // const animateSkillBars = () => {
+  //   const skillItems = document.querySelectorAll(".skill-item");
+  //   skillItems.forEach((item) => {
+  //     const level = item.getAttribute("data-level");
+  //     const progressBar = item.querySelector(".skill-progress");
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           if (progressBar && entry.isIntersecting) {
+  //             progressBar.style.width = `${level}%`;
+  //             observer.unobserve(entry.target);
+  //           }
+  //         });
+  //       },
+  //       { threshold: 0.5 }
+  //     );
+  //     observer.observe(item);
+  //   });
+  // };
+  // animateSkillBars();
   // Animate stats counter
   // Load projects
   // const loadProjects = () => {

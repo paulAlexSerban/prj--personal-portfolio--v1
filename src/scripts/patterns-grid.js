@@ -1,1 +1,0 @@
-import "../styles/patterns-grid.scss";

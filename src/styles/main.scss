@@ -5,6 +5,7 @@
 @use "./technical-arsenal.scss";
 @use "./projects.scss";
 @use "./timeline.scss";
+@use "./footer.scss";
 
 // CUSTOM RESET
 * {
@@ -83,7 +84,7 @@ body {
 // SECTION STYLES
 .section {
   &__base {
-    padding: vars.$baseline * 6 0;
+    padding: vars.$baseline * 8 0;
   }
 
   &__container {

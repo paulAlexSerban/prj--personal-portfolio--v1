@@ -76,7 +76,7 @@ import config from "./navbar.config.js";
     const highlightNavLink = () => {
       let current = "";
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 500; // Adjust for navbar height
+        const sectionTop = section.offsetTop - 700; // Adjust for navbar height
         const sectionHeight = section.clientHeight;
         if (
           pageYOffset >= sectionTop &&

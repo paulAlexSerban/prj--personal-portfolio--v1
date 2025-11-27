@@ -1,4 +1,4 @@
-import "../styles/section-contact.scss";
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
