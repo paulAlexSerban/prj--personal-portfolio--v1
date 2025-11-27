@@ -1,0 +1,44 @@
+{{#> partials/_section title="about_me" id="about"}}
+
+<link rel="stylesheet" href="about.entry.css" />
+
+<div class="about__grid">
+    <div class="about__content">
+
+        <div class="code__block">
+            <div class="code__header">
+                <span class="code__lang">javascript</span>
+            </div>
+            <pre><code>
+const developer = {
+    name: "{{profile.name}}",
+    role: "{{profile.title}}",
+    location: "Bucharest, Romania",
+    passions: [
+        {{#each profile.skills}}
+        "{{this}}",
+        {{/each}}
+    ],
+    quote: "First, solve the problem. Then write the code."
+};
+</code></pre>
+        </div>
+
+    </div>
+    <div class="about__text">
+        <h3>{{profile.aboutMe.title}}</h3>
+        <p>{{profile.aboutMe.description}}</p>
+
+        <div class="stats__grid">
+            {{#each profile.stats}}
+            <div class="stats__item">
+                <div class="stats__number" data-count="{{this.value}}">0</div>
+                <div class="stats__label">{{this.label}}</div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
+<script async defer src="about.entry.js"></script>
+{{/ partials/_section}}

@@ -1,5 +1,37 @@
-@use "./partials/variables";
+@use "sass:math";
+@use "./partials/reset";
+@use "./partials/variables" as vars;
 
+// CUSTOM RESET
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  max-inline-size: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+section {
+  max-inline-size: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+// THEME VARIABLES
 :root {
   --measure: 140ch;
   --primary-bg: #0a0a0f;
@@ -12,7 +44,7 @@
   --text-tertiary: #495670;
   --border-color: #233554;
   --card-bg: rgba(23, 23, 33, 0.8);
-  --glass-bg: rgba(17, 17, 27, 0.8);
+  --glass-bg: rgba(17, 17, 27, 0.95);
   --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -28,14 +60,8 @@
   --text-tertiary: #adb5bd;
   --border-color: #dee2e6;
   --card-bg: rgba(255, 255, 255, 0.8);
-  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.95);
   --shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -50,50 +76,44 @@ body {
   overflow-x: hidden;
 }
 
+// SECTION STYLES
+.section {
+  &__base {
+    padding: vars.$baseline * 6 0;
+  }
+
+  &__container {
+    width: 90%;
+    max-width: vars.$max-width;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: vars.$gutter * 2;
+    text-align: center;
+  }
+  &__line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: math.div(vars.$baseline, 2) auto;
+  }
+
+  &__title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: vars.$font-size--xxl;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+}
+
+// NAV SHOWCASE CARD
 .nav-showcase {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
+  gap: vars.$gutter * 2;
+  padding: vars.$gutter * 2;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-padding {
-  padding: 6rem 0;
-}
-
-.section-header {
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.section-line {
-  width: 60px;
-  height: 2px;
-  background: var(--accent-color);
-  margin: 0.5rem auto;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.section-title {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 1.5rem;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
 }

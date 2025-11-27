@@ -1,4 +1,3 @@
-import "../styles/reset.scss";
 import "../styles/main.scss";
 
 (() => {
@@ -10,7 +9,6 @@ import "../styles/main.scss";
   //     skillItems.forEach((item) => {
   //       const level = item.getAttribute("data-level");
   //       const progressBar = item.querySelector(".skill-progress");
-
   //       const observer = new IntersectionObserver(
   //         (entries) => {
   //           entries.forEach((entry) => {
@@ -22,44 +20,10 @@ import "../styles/main.scss";
   //         },
   //         { threshold: 0.5 }
   //       );
-
   //       observer.observe(item);
   //     });
   //   };
-  //   const animateStats = () => {
-  //     const statNumbers = document.querySelectorAll(".stat-number");
-
-  //     const observer = new IntersectionObserver(
-  //       (entries) => {
-  //         entries.forEach((entry) => {
-  //           if (entry.isIntersecting) {
-  //             const target = entry.target;
-  //             const count = parseInt(target.getAttribute("data-count"));
-  //             const duration = 2000; // 2 seconds
-  //             const step = count / (duration / 16); // 60fps
-  //             let current = 0;
-
-  //             const timer = setInterval(() => {
-  //               current += step;
-  //               if (current >= count) {
-  //                 current = count;
-  //                 clearInterval(timer);
-  //               }
-  //               target.textContent = Math.floor(current);
-  //             }, 16);
-
-  //             observer.unobserve(target);
-  //           }
-  //         });
-  //       },
-  //       { threshold: 0.5 }
-  //     );
-
-  //     statNumbers.forEach((stat) => observer.observe(stat));
-  //   };
   //   animateSkillBars();
-  //   animateStats();
-
   //   const decodeOnHover = () => {
   //     const encodedEmails = document.querySelectorAll(".encoded-email");
   //     encodedEmails.forEach((element) => {
@@ -72,7 +36,6 @@ import "../styles/main.scss";
   //           console.error("Failed to decode email:", e);
   //         }
   //       });
-
   //       element.addEventListener("mouseout", () => {
   //         const decodedHref = element.getAttribute("href");
   //         try {
@@ -82,7 +45,6 @@ import "../styles/main.scss";
   //           console.error("Failed to encode email:", e);
   //         }
   //       });
-
   //       element.addEventListener("focus", (e) => {
   //         const encodedHref = element.getAttribute("href");
   //         try {
@@ -92,7 +54,6 @@ import "../styles/main.scss";
   //           console.error("Failed to decode email:", e);
   //         }
   //       });
-
   //       element.addEventListener("blur", (e) => {
   //         const decodedHref = element.getAttribute("href");
   //         try {
@@ -106,9 +67,7 @@ import "../styles/main.scss";
   //   };
   //   decodeOnHover();
   // });
-
   // Animate stats counter
-
   // Load projects
   // const loadProjects = () => {
   //   const projects = [
@@ -161,13 +120,10 @@ import "../styles/main.scss";
   //       codeLink: "#",
   //     },
   //   ];
-
   //   const projectsGrid = document.querySelector(".projects-grid");
-
   //   projects.forEach((project) => {
   //     const projectCard = document.createElement("div");
   //     projectCard.className = "project-card";
-
   //     projectCard.innerHTML = `
   //             <div class="project-header">
   //                 <h3 class="project-title">${project.title}</h3>
@@ -193,25 +149,19 @@ import "../styles/main.scss";
   //                 </a>
   //             </div>
   //         `;
-
   //     projectsGrid.appendChild(projectCard);
   //   });
   // };
-
   // Initialize animations and content
-
   // animateStats();
   // loadProjects();
-
   // Mobile menu functionality
   // const mobileMenuBtn = document.querySelector(".mobile-menu-button");
   // const navLinks = document.querySelector(".nav-links");
-
   // mobileMenuBtn.addEventListener("click", function () {
   //   this.classList.toggle("active");
   //   navLinks.classList.toggle("active");
   // });
-
   // Close mobile menu when clicking on a link
   // document.querySelectorAll(".nav-link").forEach((link) => {
   //   link.addEventListener("click", () => {
@@ -219,7 +169,6 @@ import "../styles/main.scss";
   //     navLinks.classList.remove("active");
   //   });
   // });
-
   // Navbar background on scroll
   // window.addEventListener("scroll", function () {
   //   const navbar = document.getElementById("navbar");
@@ -231,7 +180,6 @@ import "../styles/main.scss";
   //     navbar.style.backdropFilter = "none";
   //   }
   // });
-
   // Smooth scrolling for anchor links
   //   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   //     anchor.addEventListener("click", function (e) {
@@ -246,23 +194,18 @@ import "../styles/main.scss";
   //     });
   //   });
   // });
-
   // Add this to your existing script.js
-
   // Competency Matrix Functionality
   // function initCompetencyMatrix() {
   //   const matrixTabs = document.querySelectorAll(".matrix-tab");
   //   const matrixDomains = document.querySelectorAll(".matrix-domain");
-
   //   // Tab switching functionality
   //   matrixTabs.forEach((tab) => {
   //     tab.addEventListener("click", function () {
   //       const targetDomain = this.getAttribute("data-domain");
-
   //       // Update active tab
   //       matrixTabs.forEach((t) => t.classList.remove("active"));
   //       this.classList.add("active");
-
   //       // Show target domain
   //       matrixDomains.forEach((domain) => {
   //         domain.classList.remove("active");
@@ -270,22 +213,18 @@ import "../styles/main.scss";
   //           domain.classList.add("active");
   //         }
   //       });
-
   //       // Animate proficiency bars when domain becomes visible
   //       setTimeout(() => {
   //         animateProficiencyBars();
   //       }, 300);
   //     });
   //   });
-
   //   // Animate subject proficiency bars on scroll
   //   function animateProficiencyBars() {
   //     const subjectItems = document.querySelectorAll(".subject-item");
-
   //     subjectItems.forEach((item) => {
   //       const proficiency = parseInt(item.getAttribute("data-proficiency"));
   //       const proficiencyBar = item.querySelector(".subject-proficiency");
-
   //       const observer = new IntersectionObserver(
   //         (entries) => {
   //           entries.forEach((entry) => {
@@ -302,49 +241,40 @@ import "../styles/main.scss";
   //         },
   //         { threshold: 0.5 }
   //       );
-
   //       observer.observe(item);
   //     });
   //   }
-
   //   // Initialize animations
   //   animateProficiencyBars();
-
   //   // Add keyboard navigation for matrix tabs
   //   document.addEventListener("keydown", function (e) {
   //     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
   //       const activeTab = document.querySelector(".matrix-tab.active");
   //       const tabs = Array.from(matrixTabs);
   //       const currentIndex = tabs.indexOf(activeTab);
-
   //       let nextIndex;
   //       if (e.key === "ArrowRight") {
   //         nextIndex = (currentIndex + 1) % tabs.length;
   //       } else {
   //         nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
   //       }
-
   //       tabs[nextIndex].click();
   //     }
   //   });
   // }
-
   // Initialize when DOM is loaded
   // document.addEventListener("DOMContentLoaded", function () {
   //   initCompetencyMatrix();
-
   //   // Add tooltip functionality for subject items
   //   const subjectItems = document.querySelectorAll(".subject-item");
   //   subjectItems.forEach((item) => {
   //     const proficiency = item.getAttribute("data-proficiency");
   //     const proficiencyText = getProficiencyText(proficiency);
-
   //     item.setAttribute(
   //       "title",
   //       `Proficiency: ${proficiency}/10 - ${proficiencyText}`
   //     );
   //   });
-
   //   function getProficiencyText(level) {
   //     const levelNum = parseInt(level);
   //     if (levelNum <= 3) return "Learning";
@@ -353,12 +283,10 @@ import "../styles/main.scss";
   //     return "Expert";
   //   }
   // });
-
   // Skills Section Interactions
   // document.addEventListener("DOMContentLoaded", function () {
   //   // Add subtle animations to skill items on scroll
   //   const skillItems = document.querySelectorAll(".skill-item");
-
   //   const observer = new IntersectionObserver(
   //     (entries) => {
   //       entries.forEach((entry) => {
@@ -369,12 +297,10 @@ import "../styles/main.scss";
   //     },
   //     { threshold: 0.1 }
   //   );
-
   //   skillItems.forEach((item) => {
   //     item.style.animationPlayState = "paused";
   //     observer.observe(item);
   //   });
-
   //   // Add click to copy functionality for skills
   //   skillItems.forEach((item) => {
   //     item.addEventListener("click", function () {
@@ -385,7 +311,6 @@ import "../styles/main.scss";
   //         this.textContent = "✓ Copied!";
   //         this.style.background = "var(--accent-color)";
   //         this.style.color = "var(--primary-bg)";
-
   //         setTimeout(() => {
   //           this.textContent = originalText;
   //           this.style.background = "";
@@ -394,7 +319,6 @@ import "../styles/main.scss";
   //       });
   //     });
   //   });
-
   //   // Add keyboard navigation for accessibility
   //   document.addEventListener("keydown", function (e) {
   //     if (e.key === "Tab") {
@@ -407,13 +331,10 @@ import "../styles/main.scss";
   //     }
   //   });
   // });
-
   // Design System Interactions
-
   // Theme Toggle
   // const themeToggle = document.getElementById("themeToggle");
   // const themeIcon = themeToggle.querySelector(".theme-icon");
-
   // themeToggle.addEventListener("click", function () {
   //   const currentTheme = document.documentElement.getAttribute("data-theme");
   //   if (currentTheme === "light") {
@@ -426,14 +347,12 @@ import "../styles/main.scss";
   //     localStorage.setItem("theme", "light");
   //   }
   // });
-
   // Check for saved theme preference
   // const savedTheme = localStorage.getItem("theme");
   // if (savedTheme === "light") {
   //   document.documentElement.setAttribute("data-theme", "light");
   //   themeIcon.textContent = "☀️";
   // }
-
   // Smooth scrolling for navigation
   // document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   //   anchor.addEventListener("click", function (e) {
@@ -447,19 +366,16 @@ import "../styles/main.scss";
   //     }
   //   });
   // });
-
   // Interactive form elements
   // const formInputs = document.querySelectorAll("input, select");
   // formInputs.forEach((input) => {
   //   input.addEventListener("focus", function () {
   //     this.parentElement.classList.add("focused");
   //   });
-
   //   input.addEventListener("blur", function () {
   //     this.parentElement.classList.remove("focused");
   //   });
   // });
-
   // Component copy functionality
   // const copyButtons = document.querySelectorAll(".button");
   // copyButtons.forEach((button) => {
@@ -475,7 +391,6 @@ import "../styles/main.scss";
   //     }
   //   });
   // });
-
   // Matrix tab functionality for showcase
   // const matrixTabs = document.querySelectorAll(".matrix-tab");
   // matrixTabs.forEach((tab) => {
@@ -484,20 +399,17 @@ import "../styles/main.scss";
   //     this.classList.add("active");
   //   });
   // });
-
   // Animate proficiency bars in competency matrix pattern
   // const subjectItems = document.querySelectorAll(".subject-item");
   // subjectItems.forEach((item) => {
   //   const proficiency = parseInt(item.getAttribute("data-proficiency"));
   //   const proficiencyBar = item.querySelector(".subject-proficiency");
-
   //   if (proficiencyBar) {
   //     setTimeout(() => {
   //       proficiencyBar.style.width = `${(proficiency / 10) * 100}%`;
   //     }, 500);
   //   }
   // });
-
   // Add keyboard navigation
   //   document.addEventListener("keydown", function (e) {
   //     if (e.key === "Tab") {
