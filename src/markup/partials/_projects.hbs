@@ -2,6 +2,7 @@
 
 <div class="projects-grid">
   {{#each projects}}
+  {{#if (eq this.status "Done")}}
   <div class="project-card">
     <div class="project-header">
       <h3 class="project-title">{{this.title}}</h3>
@@ -21,6 +22,7 @@
       </a>
     </div>
   </div>
+  {{/if}}
   {{/each}}
 </div>
 {{/ partials/_section}}
