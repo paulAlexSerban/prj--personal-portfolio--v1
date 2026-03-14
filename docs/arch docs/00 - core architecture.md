@@ -50,7 +50,7 @@ Conceptual Architecture Diagram:
 
 - **Frontend:** Vanilla HTML5, CSS3, JavaScript (ES6+)
 - **Build Tools:** Webpack (bundling), Handlebars (templating)
-- **Content Management:** JSON files for structured data
+- **Content Management:** JSON files for data
 - **Styling:** CSS with media queries for responsiveness
 - **Hosting:** GitHub Pages
 - **Version Control:** Git
