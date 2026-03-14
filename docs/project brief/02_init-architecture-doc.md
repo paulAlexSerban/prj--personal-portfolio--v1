@@ -41,12 +41,12 @@ Personal Portfolio was a foundational web development project aimed at showcasin
 
 ## 4. Architectural Decisions
 
-| ID  | Decision                                        | Rationale                                                              |
-| --- | ----------------------------------------------- | ---------------------------------------------------------------------- |
-| 001 | **Frontend Framework: JavaScript**              | To demonstrate proficiency in JavaScript for UI development.           |
-| 002 | **Static Site Generator: Webpack & Handlebars** | For efficient bundling of assets and templating of HTML content.       |
-| 003 | **Content Management: JSON Files**              | Simple and easy to manage structured data for projects and coursework. |
-| 004 | **Hosting: GitHub Pages**                       | Free, reliable, and straightforward hosting for static websites.       |
+| ID  | Decision                                                  | Rationale                                                              |
+| --- | --------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 001 | **Frontend Framework: JavaScript (Vanilla/No Framework)** | To demonstrate proficiency in JavaScript for UI development.           |
+| 002 | **Static Site Generator: Webpack & Handlebars**           | For efficient bundling of assets and templating of HTML content.       |
+| 003 | **Content Management: JSON Files**                        | Simple and easy to manage structured data for projects and coursework. |
+| 004 | **Hosting: GitHub Pages**                                 | Free, reliable, and straightforward hosting for static websites.       |
 
 ## 5. Technology Stack
 
